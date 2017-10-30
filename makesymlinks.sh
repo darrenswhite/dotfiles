@@ -1,31 +1,23 @@
-#!/bin/bash
-############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
+#!/usr/bin/env bash
 
-########## Variables
+set -e
 
-dir=$PWD                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files=$(ls -I makesymlinks.sh)    # list of files/folders to symlink in homedir
+dir=${PWD}
+olddot=~/dotfiles_old
+olddir=${olddot}/`date +%Y%m%d%H%M%S`
+files=$(find . \( -path ./.git -o -path ./makesymlinks.sh \) -prune -o -name '*' -type f -print | sed -e 's#./##')
 
-##########
+mkdir -p ${olddir}
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
+pushd $dir >/dev/null
 
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
-echo "...done"
+for file in ${files}; do
+    echo "Creating symlink from ${dir}/${file} to ~/${file}"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
-for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
+    cp -L ~/${file} ${olddir}
+    ln -f -s ${dir}/${file} ~/${file}
 done
+
+find ${olddot} -type d -empty -delete
+
+popd >/dev/null
