@@ -12,7 +12,7 @@ mkdir -p ${olddir}
 pushd $dir >/dev/null
 
 for file in ${files}; do
-    echo "Creating symlink from ${dir}/${file} to ~/${file}"
+    echo "Creating symlink from ${file} to ~/${file}"
 
     cp -L ~/${file} ${olddir}
     ln -f -s ${dir}/${file} ~/${file}
