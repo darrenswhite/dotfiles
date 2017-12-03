@@ -3,7 +3,7 @@
 set -e
 
 dir=${PWD}
-olddot=~/dotfiles_old
+olddot=~/.dotfiles
 olddir=${olddot}/`date +%Y%m%d%H%M%S`
 files=$(find . \( -path ./.git -o -path ./makesymlinks.sh \) -prune -o -name '*' -type f -print | sed -e 's#./##')
 
