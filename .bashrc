@@ -113,5 +113,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=$PATH:$HOME/bin/
 export PS1="\[\033[38;5;46m\]\u@\H:\w\$(__git_ps1)\$ \[$(tput sgr0)\]"
