@@ -15,7 +15,7 @@ for file in ${files}; do
     echo "Creating symlink from ${file} to ~/${file}"
 
     [[ -e ~/${file} ]] && cp -L ~/${file} ${olddir}
-    ln -f -s ${dir}/${file} ~/${file}
+    [[ -e ~/${file} ]] && ln -f -s ${dir}/${file} ~/${file}
 done
 
 find ${olddot} -type d -empty -delete
