@@ -3,5 +3,6 @@
 	email = darrenswhite95@gmail.com
 [core]
 	editor = vi
+	autocrlf = input
 [push]
 	default = simple
