@@ -7,7 +7,7 @@ function run {
   fi
 }
 
-run compton
-run dropbox start
-run libinput-gestures
-run redshift-gtk
+run "compton"
+run "dropbox start"
+run "libinput-gestures"
+run "redshift-gtk"
