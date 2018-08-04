@@ -17,6 +17,10 @@ require("awful.hotkeys_popup.keys")
 -- Load Debian menu entries
 local debian = require("debian.menu")
 
+-- awesome-wm-widgets
+local battery_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local volume_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -44,7 +48,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/darren/.config/awesome/themes/default/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/custom/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
@@ -60,22 +64,22 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    -- awful.layout.suit.floating,
+    awful.layout.suit.floating,
     awful.layout.suit.tile,
-    -- awful.layout.suit.tile.left,
-    -- awful.layout.suit.tile.bottom,
-    -- awful.layout.suit.tile.top,
-    -- awful.layout.suit.fair,
-    -- awful.layout.suit.fair.horizontal,
-    -- awful.layout.suit.spiral,
-    -- awful.layout.suit.spiral.dwindle,
-    -- awful.layout.suit.max,
-    -- awful.layout.suit.max.fullscreen,
-    -- awful.layout.suit.magnifier,
-    -- awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
-    -- awful.layout.suit.corner.sw,
-    -- awful.layout.suit.corner.se,
+    awful.layout.suit.tile.left,
+    awful.layout.suit.tile.bottom,
+    awful.layout.suit.tile.top,
+    awful.layout.suit.fair,
+    awful.layout.suit.fair.horizontal,
+    awful.layout.suit.spiral,
+    awful.layout.suit.spiral.dwindle,
+    awful.layout.suit.max,
+    awful.layout.suit.max.fullscreen,
+    awful.layout.suit.magnifier,
+    awful.layout.suit.corner.nw,
+    awful.layout.suit.corner.ne,
+    awful.layout.suit.corner.sw,
+    awful.layout.suit.corner.se,
 }
 -- }}}
 
@@ -172,7 +176,7 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized(wallpaper, s, true)
+        gears.wallpaper.centered(wallpaper, s, gear.colors("black"), 1.25)
     end
 end
 
@@ -184,10 +188,17 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3" }, s, awful.layout.layouts[1])
+    layouts = awful.layout.layouts
+    tags = {
+        names  = { "www", "term", "editor", "files", "media", "misc" },
+        layout = { layouts[2], layouts[2], layouts[2], layouts[2],
+                   layouts[w], layouts[2] }
+    }
+
+    tags[s] = awful.tag(tags.names, s, tags.layout)
 
     -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
+    s.mypromptbox = awful.widget.prompt({ prompt = " |  Run: " })
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
@@ -205,6 +216,14 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
+    -- Widget separator
+    sep = wibox.widget.textbox(" ")
+
+    -- Widget separator with a bar
+    bar = wibox.widget.textbox(" | ")
+
+
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -212,11 +231,17 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
             s.mypromptbox,
+            bar,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
+            sep,
+            volume_widget,
+            sep,
+            battery_widget,
+            sep,
             mytextclock,
         },
     }
@@ -231,6 +256,14 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
+-- {{{ Spotify
+function sendToSpotify(command)
+  return function ()
+    awful.util.spawn_with_shell("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player." .. command)
+  end
+end
+-- }}}
+
 -- {{{ Key bindings
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -242,27 +275,48 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
-awful.key({ modkey, "Shift" }, "Left",
-    function ()
-        local t = client.focus and client.focus.first_tag or nil
-        if t == nil then
-            return
-        end
-        local tag = client.focus.screen.tags[(t.name - 2) % 3 + 1]
-        client.focus.move_to_tag(client.focus, tag)
-        awful.tag.viewprev()
-    end,
+    -- media keys
+    awful.key({}, "XF86AudioMute", function () awful.spawn("amixer -D pulse set Master +1 toggle") end,
+              {description = "mute volume", group = "media keys"}),
+    awful.key({}, "XF86AudioLowerVolume", function () awful.spawn("amixer -D pulse sset Master 5%-") end,
+              {description = "decrease volume", group = "media keys"}),
+    awful.key({}, "XF86AudioRaiseVolume", function () awful.spawn("amixer -D pulse sset Master 5%+") end,
+              {description = "increase volume", group = "media keys"}),
+    awful.key({}, "XF86AudioPrev", sendToSpotify("Previous"),
+              {description = "previous", group = "media keys"}),
+    awful.key({}, "XF86AudioPlay", sendToSpotify("PlayPause"),
+              {description = "play/pause", group = "media keys"}),
+    awful.key({}, "XF86AudioNext", sendToSpotify("Next"),
+              {description = "next", group = "media keys"}),
+    awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("light -U 10") end,
+              {description = "decrease brightness", group = "media keys"}),
+    awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("light -A 10") end,
+              {description = "increase brightness", group = "media keys"}),
+    
+
+    awful.key({ modkey, "Shift" }, "Left",
+        function ()
+            local t = client.focus and client.focus.first_tag or nil
+            if t == nil then
+                return
+            end
+            local tags = client.focus.screen.tags
+            local tag = tags[(t.index - 2) % #tags + 1]
+            client.focus.move_to_tag(client.focus, tag)
+            awful.tag.viewprev()
+        end,
         {description = "move client to previous tag and switch to it", group = "layout"}),
-awful.key({ modkey, "Shift" }, "Right",
-    function ()
-        local t = client.focus and client.focus.first_tag or nil
-        if t == nil then
-            return
-        end
-        local tag = client.focus.screen.tags[(t.name % 3) + 1]
-        client.focus.move_to_tag(client.focus, tag)
-        awful.tag.viewnext()
-    end,
+    awful.key({ modkey, "Shift" }, "Right",
+        function ()
+            local t = client.focus and client.focus.first_tag or nil
+            if t == nil then
+                return
+            end
+            local tags = client.focus.screen.tags
+            local tag = tags[(t.index % #tags) + 1]
+            client.focus.move_to_tag(client.focus, tag)
+            awful.tag.viewnext()
+        end,
         {description = "move client to next tag and switch to it", group = "layout"}),
 
     awful.key({ modkey,           }, "j",
@@ -309,6 +363,8 @@ awful.key({ modkey, "Shift" }, "Right",
         {description = "go back", group = "client"}),
 
     -- Standard program
+    awful.key({ modkey               }, "Return", function () awful.spawn(terminal) end,
+              {description = "open a terminal", group = "launcher"}),
     awful.key({ "Mod1", "Control",   }, "t", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
@@ -510,12 +566,23 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    -- Client-tag rules
+    { rule_any = { class = { "Firefox", "Google-chrome" }},
+      properties = { tag = "www", switchtotag = true }},
+
+    { rule_any = { class = { "Gnome-terminal" }},
+      properties = { tag = "term", switchtotag = true }},
+
+    { rule_any = { class = { "Atom", "Gedit", "jetbrains-idea" }},
+      properties = { tag = "editor", switchtotag = true }},
+
+    { rule_any = { class = { "Nautilus" }},
+      properties = { tag = "files", switchtotag = true }},
+
+    { rule_any = { class = { }}},
 }
 -- }}}
 
@@ -586,7 +653,7 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+awful.spawn.with_shell("~/.config/awesome/startup.sh")
 
 function scandir(directory, filter)
     local i, t, popen = 0, {}, io.popen
@@ -602,7 +669,7 @@ function scandir(directory, filter)
     return t
 end
 
-wp_path = "/home/darren/Dropbox/Pictures/wallpapers/3440x1440/"
+wp_path = os.getenv("HOME") .. "/Dropbox/Pictures/wallpapers/3440x1440/"
 wp_files = scandir(wp_path)
 
 gears.timer({
@@ -614,3 +681,6 @@ gears.timer({
         end
     end
 }):emit_signal("timeout")
+
+menubar.menu_gen.lookup_category_icons = function () end
+menubar.show_categories = false

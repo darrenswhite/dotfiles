@@ -8,6 +8,6 @@ function run {
 }
 
 run compton
-run dropbox
+run dropbox start
 run libinput-gestures
 run redshift-gtk
