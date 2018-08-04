@@ -275,6 +275,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
+    -- user
+    awful.key({ "Mod1", "Control", }, "l", function () awful.spawn("dm-tool lock") end,
+              {description = "lock the screen", group = "user"}),
+
     -- media keys
     awful.key({}, "XF86AudioMute", function () awful.spawn("amixer -D pulse set Master +1 toggle") end,
               {description = "mute volume", group = "media keys"}),
