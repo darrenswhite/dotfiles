@@ -586,7 +586,7 @@ awful.rules.rules = {
     { rule_any = { class = { "Nautilus", "Nemo" }},
       properties = { tag = "files", switchtotag = true }},
 
-    { rule_any = { class = { "mpv", "Totem" }},
+    { rule_any = { class = { "mpv", "Spotify", "Totem" }},
       properties = { tag = "media", switchtotag = true }},
 
     { rule_any = { class = { }}},
