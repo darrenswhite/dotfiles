@@ -122,3 +122,7 @@ fi
 if [[ -d $HOME/.npm-global/bin ]]; then
     export PATH=$HOME/.npm-global/bin:$PATH
 fi
+
+function yta() {
+    mpv --ytdl-format=bestaudio ytdl://ytsearch:"$@"
+}
