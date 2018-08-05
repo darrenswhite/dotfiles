@@ -583,8 +583,11 @@ awful.rules.rules = {
     { rule_any = { class = { "Atom", "Gedit", "jetbrains-idea" }},
       properties = { tag = "editor", switchtotag = true }},
 
-    { rule_any = { class = { "Nautilus" }},
+    { rule_any = { class = { "Nautilus", "Nemo" }},
       properties = { tag = "files", switchtotag = true }},
+
+    { rule_any = { class = { "mpv", "Totem" }},
+      properties = { tag = "media", switchtotag = true }},
 
     { rule_any = { class = { }}},
 }
