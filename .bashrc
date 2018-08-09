@@ -126,3 +126,7 @@ fi
 function yta() {
     mpv --ytdl-format=bestaudio ytdl://ytsearch:"$@"
 }
+
+function mega-dl() {
+    mega-get -q $1 /mnt/voyager/share/mega/
+}
