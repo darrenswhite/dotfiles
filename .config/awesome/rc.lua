@@ -276,7 +276,7 @@ globalkeys = gears.table.join(
               {description = "go back", group = "tag"}),
 
     -- user
-    awful.key({ "Mod1", "Control", }, "l", function () awful.spawn("dm-tool lock") end,
+    awful.key({ modkey,           }, "l", function () awful.spawn("dm-tool lock") end,
               {description = "lock the screen", group = "user"}),
 
     -- media keys
