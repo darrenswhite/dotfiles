@@ -15,6 +15,7 @@ for file in ${files}; do
     echo "Creating symlink from ${file} to ~/${file}"
 
     [[ -e ~/${file} ]] && cp -L ~/${file} ${olddir}
+    mkdir -p $(dirname ~/$file)
     ln -f -s ${dir}/${file} ~/${file}
 done
 
