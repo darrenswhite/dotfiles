@@ -1,1 +1,3 @@
-mega-transfers --limit=100 --path-display-size=1024 | awk 'BEGIN{FS="  +";OFS="\t"}/%/{print $6,$4,$5,$3}' | sed 's/\(.*\)\s\/.*\/\(.*\)/\1\t\2/' | column -t -s $'\t'
+mega-transfers --limit=100 --path-display-size=1024 \
+  | sed 's/\(.*\)\s\/.*\/\(.*\)/\1\2/' \
+  | awk 'BEGIN { FS="  +"; OFS="\t\t" } /%/ { printf("%-6s%10s%10s %s\n", $6, $4, $5, $3) }'
