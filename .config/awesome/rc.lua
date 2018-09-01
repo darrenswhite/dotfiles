@@ -580,7 +580,7 @@ awful.rules.rules = {
     { rule_any = { class = { "Gnome-terminal" }},
       properties = { tag = "term", switchtotag = true }},
 
-    { rule_any = { class = { "Atom", "Gedit", "jetbrains-idea" }},
+    { rule_any = { class = { "Atom", "Gedit", "jetbrains-idea", "jetbrains-idea-ce" }},
       properties = { tag = "editor", switchtotag = true }},
 
     { rule_any = { class = { "Nautilus", "Nemo" }},
