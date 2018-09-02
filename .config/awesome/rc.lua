@@ -190,9 +190,8 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     layouts = awful.layout.layouts
     tags = {
-        names  = { "www", "term", "editor", "files", "media", "misc" },
-        layout = { layouts[2], layouts[2], layouts[2], layouts[2],
-                   layouts[w], layouts[2] }
+        names  = { "1", "2", "3" },
+        layout = { layouts[2], layouts[2], layouts[2] }
     }
 
     tags[s] = awful.tag(tags.names, s, tags.layout)
@@ -558,7 +557,6 @@ awful.rules.rules = {
           "pinentry",
           "veromix",
           "xtightvncviewer"},
-
         name = {
           "Event Tester",  -- xev.
         },
@@ -568,28 +566,10 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
-    -- Add titlebars to normal clients and dialogs
+    -- Disable titlebars for normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = false }
     },
-
-    -- Client-tag rules
-    { rule_any = { class = { "Firefox", "Google-chrome" }},
-      properties = { tag = "www", switchtotag = true }},
-
-    { rule_any = { class = { "Gnome-terminal" }},
-      properties = { tag = "term", switchtotag = true }},
-
-    { rule_any = { class = { "Atom", "Gedit", "jetbrains-idea", "jetbrains-idea-ce" }},
-      properties = { tag = "editor", switchtotag = true }},
-
-    { rule_any = { class = { "Nautilus", "Nemo" }},
-      properties = { tag = "files", switchtotag = true }},
-
-    { rule_any = { class = { "mpv", "Spotify", "Totem" }},
-      properties = { tag = "media", switchtotag = true }},
-
-    { rule_any = { class = { }}},
 }
 -- }}}
 
