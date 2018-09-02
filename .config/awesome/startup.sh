@@ -7,6 +7,7 @@ function run {
   fi
 }
 
+run "ckb-next -b"
 run "compton"
 run "dropbox start"
 run "libinput-gestures"
