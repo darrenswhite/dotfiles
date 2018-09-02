@@ -176,7 +176,7 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.centered(wallpaper, s, gear.colors("black"), 1.25)
+        gears.wallpaper.centered(wallpaper, s, gear.colors("black"), s.geometry.height / 1440)
     end
 end
 
@@ -663,8 +663,8 @@ gears.timer({
     timeout = 60,
     autostart = true,
     callback = function()
-        for s = 1, screen.count() do
-            gears.wallpaper.centered(wp_path .. wp_files[math.random(1, #wp_files)], s, gears.color("black"), 1.25)
+        for s in screen do
+            gears.wallpaper.centered(wp_path .. wp_files[math.random(1, #wp_files)], s, gears.color("black"), s.geometry.height / 1440)
         end
     end
 }):emit_signal("timeout")
