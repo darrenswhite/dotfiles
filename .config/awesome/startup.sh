@@ -12,3 +12,6 @@ run "compton"
 run "dropbox start"
 run "libinput-gestures"
 run "redshift-gtk"
+
+# fix nvidia gpu tearing
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
