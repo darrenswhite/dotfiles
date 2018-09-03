@@ -18,8 +18,7 @@ require("awful.hotkeys_popup.keys")
 local debian = require("debian.menu")
 
 -- awesome-wm-widgets
-local battery_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
-local volume_widget = require("awesome-wm-widgets.volumearc-widget.volumearc")
+local volume_widget = require("widgets.volume")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -221,8 +220,6 @@ awful.screen.connect_for_each_screen(function(s)
     -- Widget separator with a bar
     bar = wibox.widget.textbox(" | ")
 
-
-
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -238,8 +235,6 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.systray(),
             sep,
             volume_widget,
-            sep,
-            battery_widget,
             sep,
             mytextclock,
         },
@@ -273,17 +268,20 @@ globalkeys = gears.table.join(
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
+    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+              {description = "show main menu", group = "awesome"}),
 
-    -- user
+    -- User
     awful.key({ modkey,           }, "l", function () awful.spawn("dm-tool lock") end,
               {description = "lock the screen", group = "user"}),
 
-    -- media keys
+    -- Function keys
     awful.key({}, "XF86AudioMute", function () awful.spawn("amixer -D pulse set Master +1 toggle") end,
               {description = "mute volume", group = "media keys"}),
     awful.key({}, "XF86AudioLowerVolume", function () awful.spawn("amixer -D pulse sset Master 5%-") end,
               {description = "decrease volume", group = "media keys"}),
     awful.key({}, "XF86AudioRaiseVolume", function () awful.spawn("amixer -D pulse sset Master 5%+") end,
+
               {description = "increase volume", group = "media keys"}),
     awful.key({}, "XF86AudioPrev", sendToSpotify("Previous"),
               {description = "previous", group = "media keys"}),
@@ -291,16 +289,17 @@ globalkeys = gears.table.join(
               {description = "play/pause", group = "media keys"}),
     awful.key({}, "XF86AudioNext", sendToSpotify("Next"),
               {description = "next", group = "media keys"}),
+
     awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("light -U 10") end,
               {description = "decrease brightness", group = "media keys"}),
     awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("light -A 10") end,
               {description = "increase brightness", group = "media keys"}),
 
+    -- Layout manipulation
     awful.key({ modkey,         }, "Up", function () awful.client.cycle(true) end,
               {description = "cycle clients clockwise", group = "layout"}),
     awful.key({ modkey,         }, "Down", function () awful.client.cycle(false) end,
               {description = "cycle clients counter-clockwise", group = "layout"}),
-    
 
     awful.key({ modkey, "Shift" }, "Left",
         function ()
@@ -326,20 +325,11 @@ globalkeys = gears.table.join(
             awful.tag.viewnext()
         end,
         {description = "move client to next tag and switch to it", group = "layout"}),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
 
-    -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "h", function () awful.client.swap.byidx(  1)    end,
-              {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "l", function () awful.client.swap.byidx( -1)    end,
-              {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey, "Control" }, "h", function () awful.screen.focus_relative( 1) end,
-              {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, "Control" }, "l", function () awful.screen.focus_relative(-1) end,
-              {description = "focus the previous screen", group = "screen"}),
+    -- Client manipulation
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
+
     awful.key({ "Mod1",           }, "Tab",
         function ()
             awful.client.focus.byidx(-1)
@@ -371,14 +361,17 @@ globalkeys = gears.table.join(
               {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "j",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
+
     awful.key({ modkey, "Shift"   }, "j",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "k",     function () awful.tag.incnmaster(-1, nil, true) end,
               {description = "decrease the number of master clients", group = "layout"}),
+
     awful.key({ modkey, "Control" }, "j",     function () awful.tag.incncol( 1, nil, true)    end,
               {description = "increase the number of columns", group = "layout"}),
     awful.key({ modkey, "Control" }, "k",     function () awful.tag.incncol(-1, nil, true)    end,
               {description = "decrease the number of columns", group = "layout"}),
+
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
@@ -409,6 +402,7 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
+
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
