@@ -113,7 +113,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PS1="\[\033[38;5;46m\]\u@\H:\w\$(__git_ps1)\$ \[$(tput sgr0)\]"
+export PS1="\[\033[38;5;208m\]\u@\H:\w\$(__git_ps1)\[\033[38;5;15m\]\n» \[$(tput sgr0)\]"
 
 if [[ -d $HOME/workspace/flutter/bin ]]; then
     export PATH=$HOME/workspace/flutter/bin:$PATH

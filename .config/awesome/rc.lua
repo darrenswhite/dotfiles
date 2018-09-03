@@ -50,7 +50,7 @@ end
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/custom/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
