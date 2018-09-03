@@ -1,4 +1,4 @@
-urxvt.font:                  xft: Terminus:autohint=true:antialias=true:size=12
+urxvt.font:                  xft: Terminus:autohint=true:antialias=true:size=10
 urxvt.background:            black
 urxvt.foreground:            white
 urxvt.scrollBar:             false
