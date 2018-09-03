@@ -217,17 +217,13 @@ awful.screen.connect_for_each_screen(function(s)
     -- Widget separator
     sep = wibox.widget.textbox(" ")
 
-    -- Widget separator with a bar
-    bar = wibox.widget.textbox(" | ")
-
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
-            s.mypromptbox,
-            bar,
+            s.mypromptbox
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
