@@ -17,9 +17,6 @@ require("awful.hotkeys_popup.keys")
 -- Load Debian menu entries
 local debian = require("debian.menu")
 
--- awesome-wm-widgets
-local volume_widget = require("widgets.volume")
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -124,6 +121,9 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+-- Create a volume widget
+volume_widget = require("widgets.volume")
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -189,7 +189,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     layouts = awful.layout.layouts
     tags = {
-        names  = { "1", "2", "3" },
+        names  = { "0", "1", "2" },
         layout = { layouts[3], layouts[3], layouts[3] }
     }
 

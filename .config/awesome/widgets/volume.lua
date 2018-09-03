@@ -1,5 +1,7 @@
 local awful = require("awful")
 local wibox = require("wibox")
+local beautiful = require("beautiful")
+local gears = require("gears")
 
 local spawn = awful.spawn or awful.util.spawn
 local watch = awful.spawn and awful.spawn.with_line_callback
