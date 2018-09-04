@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Data><Series>
+  <id>340234</id>
+  <Actors>|John DiMaggio|Eric André|Nat Faxon|Abbi Jacobson|</Actors>
+  <Airs_DayOfWeek>Friday</Airs_DayOfWeek>
+  <Airs_Time>3:00 AM</Airs_Time>
+  <ContentRating>TV-14</ContentRating>
+  <FirstAired></FirstAired>
+  <Genre>|Animation|Comedy|Fantasy|</Genre>
+  <IMDB_ID>tt5363918</IMDB_ID>
+  <Language>en</Language>
+  <Network>Netflix</Network>
+  <NetworkID></NetworkID>
+  <Overview>Princess duties call, but she'd rather be drinking. Free-spirited Bean exasperates the king as she wreaks havoc with her demon and elf pals.</Overview>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <Runtime>30</Runtime>
+  <SeriesID></SeriesID>
+  <SeriesName>Disenchantment</SeriesName>
+  <Status>Continuing</Status>
+  <added>2018-01-02 05:35:44</added>
+  <addedBy>482991</addedBy>
+  <banner>graphical/5b8784d463e99.jpg</banner>
+  <fanart>fanart/original/5b7d74b9a87a5.jpg</fanart>
+  <finale_aired>2018-08-17</finale_aired>
+  <lastupdated>1536020355</lastupdated>
+  <poster>posters/5b4daafab106b.jpg</poster>
+  <slug>disenchantment</slug>
+  <tms_wanted_old>0</tms_wanted_old>
+  <zap2it_id></zap2it_id>
+</Series>
+<Episode>
+  <id>6699345</id>
+  <Combined_episodenumber>1.0</Combined_episodenumber>
+  <Combined_season>1</Combined_season>
+  <DVD_chapter></DVD_chapter>
+  <DVD_discid></DVD_discid>
+  <DVD_episodenumber>1.0</DVD_episodenumber>
+  <DVD_season>1</DVD_season>
+  <Director>||</Director>
+  <EpImgFlag></EpImgFlag>
+  <EpisodeName>A Princess, an Elf, and a Demon Walk Into a Bar</EpisodeName>
+  <EpisodeNumber>1</EpisodeNumber>
+  <FirstAired>2018-08-17</FirstAired>
+  <GuestStars>||</GuestStars>
+  <IMDB_ID>tt6561570</IMDB_ID>
+  <Language>en</Language>
+  <Overview>Princess Bean already has the wedding day blues when a mysterious figure arrives, claiming he's her personal demon. Elfo hates his happy homeland.</Overview>
+  <ProductionCode></ProductionCode>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeasonNumber>1</SeasonNumber>
+  <Writer>|Matt Groening|</Writer>
+  <absolute_number>1</absolute_number>
+  <filename>episodes/340234/6699345.jpg</filename>
+  <is_movie>0</is_movie>
+  <lastupdated>1536020167</lastupdated>
+  <seasonid>765779</seasonid>
+  <seriesid>340234</seriesid>
+  <thumb_added>2018-08-17 00:07:28</thumb_added>
+  <thumb_height>225</thumb_height>
+  <thumb_width>400</thumb_width>
+</Episode>
+<Episode>
+  <id>6699487</id>
+  <Combined_episodenumber>2.0</Combined_episodenumber>
+  <Combined_season>1</Combined_season>
+  <DVD_chapter></DVD_chapter>
+  <DVD_discid></DVD_discid>
+  <DVD_episodenumber>2.0</DVD_episodenumber>
+  <DVD_season>1</DVD_season>
+  <Director>|Frank Marino|</Director>
+  <EpImgFlag></EpImgFlag>
+  <EpisodeName>For Whom the Pig Oinks</EpisodeName>
+  <EpisodeNumber>2</EpisodeNumber>
+  <FirstAired>2018-08-17</FirstAired>
+  <GuestStars>||</GuestStars>
+  <IMDB_ID>tt7177774</IMDB_ID>
+  <Language>en</Language>
+  <Overview>How to get rid of an unwanted fiancé? Bean's plan involves a party barge and mermaids. King Zøg tries to make Elfo's blood into an immortality potion.</Overview>
+  <ProductionCode></ProductionCode>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeasonNumber>1</SeasonNumber>
+  <Writer>|Matt Groening|</Writer>
+  <absolute_number>2</absolute_number>
+  <filename>episodes/340234/6699487.jpg</filename>
+  <is_movie>0</is_movie>
+  <lastupdated>1536020258</lastupdated>
+  <seasonid>765779</seasonid>
+  <seriesid>340234</seriesid>
+  <thumb_added>2018-08-17 00:07:17</thumb_added>
+  <thumb_height>225</thumb_height>
+  <thumb_width>400</thumb_width>
+</Episode>
+<Episode>
+  <id>6699488</id>
+  <Combined_episodenumber>3.0</Combined_episodenumber>
+  <Combined_season>1</Combined_season>
+  <DVD_chapter></DVD_chapter>
+  <DVD_discid></DVD_discid>
+  <DVD_episodenumber>3.0</DVD_episodenumber>
+  <DVD_season>1</DVD_season>
+  <Director>||</Director>
+  <EpImgFlag></EpImgFlag>
+  <EpisodeName>The Princess of Darkness</EpisodeName>
+  <EpisodeNumber>3</EpisodeNumber>
+  <FirstAired>2018-08-17</FirstAired>
+  <GuestStars>||</GuestStars>
+  <IMDB_ID>tt7177782</IMDB_ID>
+  <Language>en</Language>
+  <Overview>Sorcerio declares that demonic possession is behind Bean's drunken exploits -- and things look dicey for Luci when the king hires an eerie exorcist.</Overview>
+  <ProductionCode></ProductionCode>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeasonNumber>1</SeasonNumber>
+  <Writer>|Matt Groening|</Writer>
+  <absolute_number>3</absolute_number>
+  <filename>episodes/340234/6699488.jpg</filename>
+  <is_movie>0</is_movie>
+  <lastupdated>1536020355</lastupdated>
+  <seasonid>765779</seasonid>
+  <seriesid>340234</seriesid>
+  <thumb_added>2018-08-17 00:07:08</thumb_added>
+  <thumb_height>225</thumb_height>
+  <thumb_width>400</thumb_width>
+</Episode>
+<Episode>
+  <id>6699489</id>
+  <Combined_episodenumber>4.0</Combined_episodenumber>
+  <Combined_season>1</Combined_season>
+  <DVD_chapter></DVD_chapter>
+  <DVD_discid></DVD_discid>
+  <DVD_episodenumber>4.0</DVD_episodenumber>
+  <DVD_season>1</DVD_season>
+  <Director>||</Director>
+  <EpImgFlag></EpImgFlag>
+  <EpisodeName>Castle Party Massacre</EpisodeName>
+  <EpisodeNumber>4</EpisodeNumber>
+  <FirstAired>2018-08-17</FirstAired>
+  <GuestStars>||</GuestStars>
+  <IMDB_ID>tt7177814</IMDB_ID>
+  <Language>en</Language>
+  <Overview>With the king away, Bean throws a wild party while Odval and Sorcerio gather their secret society for a ritual. But the night takes a surprising turn.</Overview>
+  <ProductionCode></ProductionCode>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeasonNumber>1</SeasonNumber>
+  <Writer>|Matt Groening|</Writer>
+  <absolute_number>4</absolute_number>
+  <filename>episodes/340234/6699489.jpg</filename>
+  <is_movie>0</is_movie>
+  <lastupdated>1535882512</lastupdated>
+  <seasonid>765779</seasonid>
+  <seriesid>340234</seriesid>
+  <thumb_added>2018-08-17 00:06:58</thumb_added>
+  <thumb_height>225</thumb_height>
+  <thumb_width>400</thumb_width>
+</Episode>
+<Episode>
+  <id>6699490</id>
+  <Combined_episodenumber>5.0</Combined_episodenumber>
+  <Combined_season>1</Combined_season>
+  <DVD_chapter></DVD_chapter>
+  <DVD_discid></DVD_discid>
+  <DVD_episodenumber>5.0</DVD_episodenumber>
+  <DVD_season>1</DVD_season>
+  <Director>||</Director>
+  <EpImgFlag></EpImgFlag>
+  <EpisodeName>Faster, Princess! Kill! Kill!</EpisodeName>
+  <EpisodeNumber>5</EpisodeNumber>
+  <FirstAired>2018-08-17</FirstAired>
+  <GuestStars>||</GuestStars>
+  <IMDB_ID>tt7177820</IMDB_ID>
+  <Language>en</Language>
+  <Overview>Banished from the castle by Zøg, Bean tries to work but has trouble keeping a job. Elfo encounters a bizarre pair of siblings living in a candy house.</Overview>
+  <ProductionCode></ProductionCode>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeasonNumber>1</SeasonNumber>
+  <Writer>|Matt Groening|</Writer>
+  <absolute_number>5</absolute_number>
+  <filename>episodes/340234/6699490.jpg</filename>
+  <is_movie>0</is_movie>
+  <lastupdated>1535882546</lastupdated>
+  <seasonid>765779</seasonid>
+  <seriesid>340234</seriesid>
+  <thumb_added>2018-08-17 00:06:44</thumb_added>
+  <thumb_height>225</thumb_height>
+  <thumb_width>400</thumb_width>
+</Episode>
+<Episode>
+  <id>6699491</id>
+  <Combined_episodenumber>6.0</Combined_episodenumber>
+  <Combined_season>1</Combined_season>
+  <DVD_chapter></DVD_chapter>
+  <DVD_discid></DVD_discid>
+  <DVD_episodenumber>6.0</DVD_episodenumber>
+  <DVD_season>1</DVD_season>
+  <Director>||</Director>
+  <EpImgFlag></EpImgFlag>
+  <EpisodeName>Swamp and Circumstance</EpisodeName>
+  <EpisodeNumber>6</EpisodeNumber>
+  <FirstAired>2018-08-17</FirstAired>
+  <GuestStars>||</GuestStars>
+  <IMDB_ID>tt7177818</IMDB_ID>
+  <Language>en</Language>
+  <Overview>Bean tries her hand at diplomacy after Zøg makes her ambassador to Dankmire, Oona's kingdom and an important ally for Dreamland.</Overview>
+  <ProductionCode></ProductionCode>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeasonNumber>1</SeasonNumber>
+  <Writer>|Matt Groening|Reid Harrison|</Writer>
+  <absolute_number>6</absolute_number>
+  <filename>episodes/340234/6699491.jpg</filename>
+  <is_movie>0</is_movie>
+  <lastupdated>1535882570</lastupdated>
+  <seasonid>765779</seasonid>
+  <seriesid>340234</seriesid>
+  <thumb_added>2018-08-17 00:06:34</thumb_added>
+  <thumb_height>225</thumb_height>
+  <thumb_width>400</thumb_width>
+</Episode>
+<Episode>
+  <id>6699493</id>
+  <Combined_episodenumber>7.0</Combined_episodenumber>
+  <Combined_season>1</Combined_season>
+  <DVD_chapter></DVD_chapter>
+  <DVD_discid></DVD_discid>
+  <DVD_episodenumber>7.0</DVD_episodenumber>
+  <DVD_season>1</DVD_season>
+  <Director>||</Director>
+  <EpImgFlag></EpImgFlag>
+  <EpisodeName>Love's Tender Rampage</EpisodeName>
+  <EpisodeNumber>7</EpisodeNumber>
+  <FirstAired>2018-08-17</FirstAired>
+  <GuestStars>||</GuestStars>
+  <IMDB_ID>tt7177822</IMDB_ID>
+  <Language>en</Language>
+  <Overview>Elfo lies to hide his feelings for Bean, but things get complicated when she tries to help him by sending the knights on a quest.</Overview>
+  <ProductionCode></ProductionCode>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeasonNumber>1</SeasonNumber>
+  <Writer>|Matt Groening|</Writer>
+  <absolute_number>7</absolute_number>
+  <filename>episodes/340234/6699493.jpg</filename>
+  <is_movie>0</is_movie>
+  <lastupdated>1535882599</lastupdated>
+  <seasonid>765779</seasonid>
+  <seriesid>340234</seriesid>
+  <thumb_added>2018-08-17 00:06:21</thumb_added>
+  <thumb_height>225</thumb_height>
+  <thumb_width>400</thumb_width>
+</Episode>
+<Episode>
+  <id>6699494</id>
+  <Combined_episodenumber>8.0</Combined_episodenumber>
+  <Combined_season>1</Combined_season>
+  <DVD_chapter></DVD_chapter>
+  <DVD_discid></DVD_discid>
+  <DVD_episodenumber>8.0</DVD_episodenumber>
+  <DVD_season>1</DVD_season>
+  <Director>||</Director>
+  <EpImgFlag></EpImgFlag>
+  <EpisodeName>The Limits of Immortality</EpisodeName>
+  <EpisodeNumber>8</EpisodeNumber>
+  <FirstAired>2018-08-17</FirstAired>
+  <GuestStars>||</GuestStars>
+  <IMDB_ID>tt7177810</IMDB_ID>
+  <Language>en</Language>
+  <Overview>Elfo's been kidnapped! Bean, Luci, Sorcerio and the knights search for him, along with a magical pendant needed to complete the immortality potion.</Overview>
+  <ProductionCode></ProductionCode>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeasonNumber>1</SeasonNumber>
+  <Writer>|Matt Groening|</Writer>
+  <absolute_number>8</absolute_number>
+  <filename>episodes/340234/6699494.jpg</filename>
+  <is_movie>0</is_movie>
+  <lastupdated>1535882626</lastupdated>
+  <seasonid>765779</seasonid>
+  <seriesid>340234</seriesid>
+  <thumb_added>2018-08-17 00:06:10</thumb_added>
+  <thumb_height>225</thumb_height>
+  <thumb_width>400</thumb_width>
+</Episode>
+<Episode>
+  <id>6699495</id>
+  <Combined_episodenumber>9.0</Combined_episodenumber>
+  <Combined_season>1</Combined_season>
+  <DVD_chapter></DVD_chapter>
+  <DVD_discid></DVD_discid>
+  <DVD_episodenumber>9.0</DVD_episodenumber>
+  <DVD_season>1</DVD_season>
+  <Director>|Frank Marino|</Director>
+  <EpImgFlag></EpImgFlag>
+  <EpisodeName>To Thine Own Elf Be True</EpisodeName>
+  <EpisodeNumber>9</EpisodeNumber>
+  <FirstAired>2018-08-17</FirstAired>
+  <GuestStars>||</GuestStars>
+  <IMDB_ID>tt7177824</IMDB_ID>
+  <Language>en</Language>
+  <Overview>After he learns a surprising secret about himself, Elfo heads home to Elfwood in search of the truth.</Overview>
+  <ProductionCode></ProductionCode>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeasonNumber>1</SeasonNumber>
+  <Writer>|Matt Groening|</Writer>
+  <absolute_number>9</absolute_number>
+  <filename>episodes/340234/6699495.jpg</filename>
+  <is_movie>0</is_movie>
+  <lastupdated>1535882664</lastupdated>
+  <seasonid>765779</seasonid>
+  <seriesid>340234</seriesid>
+  <thumb_added>2018-08-17 00:05:57</thumb_added>
+  <thumb_height>225</thumb_height>
+  <thumb_width>400</thumb_width>
+</Episode>
+<Episode>
+  <id>6699496</id>
+  <Combined_episodenumber>10.0</Combined_episodenumber>
+  <Combined_season>1</Combined_season>
+  <DVD_chapter></DVD_chapter>
+  <DVD_discid></DVD_discid>
+  <DVD_episodenumber>10.0</DVD_episodenumber>
+  <DVD_season>1</DVD_season>
+  <Director>||</Director>
+  <EpImgFlag></EpImgFlag>
+  <EpisodeName>Dreamland Falls</EpisodeName>
+  <EpisodeNumber>10</EpisodeNumber>
+  <FirstAired>2018-08-17</FirstAired>
+  <GuestStars>||</GuestStars>
+  <IMDB_ID>tt7177828</IMDB_ID>
+  <Language>en</Language>
+  <Overview>As Dreamland celebrates an unexpected arrival while saying goodbye to a friend, everyday life is thrown into disarray.</Overview>
+  <ProductionCode></ProductionCode>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeasonNumber>1</SeasonNumber>
+  <Writer>|Matt Groening|</Writer>
+  <absolute_number>10</absolute_number>
+  <filename>episodes/340234/6699496.jpg</filename>
+  <is_movie>0</is_movie>
+  <lastupdated>1535882696</lastupdated>
+  <seasonid>765779</seasonid>
+  <seriesid>340234</seriesid>
+  <thumb_added>2018-08-17 00:05:44</thumb_added>
+  <thumb_height>225</thumb_height>
+  <thumb_width>400</thumb_width>
+</Episode>
+</Data><?xml version="1.0" encoding="UTF-8" ?>
+<Banners>
+<Banner>
+  <id>1302198</id>
+  <BannerPath>fanart/original/5b7d74b9a87a5.jpg</BannerPath>
+  <BannerType>fanart</BannerType>
+  <BannerType2>1280x720</BannerType2>
+  <Colors></Colors>
+  <Language>en</Language>
+  <Rating>10.0000</Rating>
+  <RatingCount>1</RatingCount>
+  <SeriesName>false</SeriesName>
+  <ThumbnailPath>_cache/fanart/original/5b7d74b9a87a5.jpg</ThumbnailPath>
+  <VignettePath>fanart/vignette/5b7d74b9a87a5.jpg</VignettePath>
+</Banner>
+<Banner>
+  <id>1284803</id>
+  <BannerPath>fanart/original/5b0582cf9d47e.jpg</BannerPath>
+  <BannerType>fanart</BannerType>
+  <BannerType2>1920x1080</BannerType2>
+  <Colors></Colors>
+  <Language>en</Language>
+  <Rating>8.8000</Rating>
+  <RatingCount>5</RatingCount>
+  <SeriesName>false</SeriesName>
+  <ThumbnailPath>_cache/fanart/original/5b0582cf9d47e.jpg</ThumbnailPath>
+  <VignettePath>fanart/vignette/5b0582cf9d47e.jpg</VignettePath>
+</Banner>
+<Banner>
+  <id>1284858</id>
+  <BannerPath>fanart/original/5b05ad2d4c104.jpg</BannerPath>
+  <BannerType>fanart</BannerType>
+  <BannerType2>1280x720</BannerType2>
+  <Colors></Colors>
+  <Language>en</Language>
+  <Rating>8.7500</Rating>
+  <RatingCount>4</RatingCount>
+  <SeriesName>false</SeriesName>
+  <ThumbnailPath>_cache/fanart/original/5b05ad2d4c104.jpg</ThumbnailPath>
+  <VignettePath>fanart/vignette/5b05ad2d4c104.jpg</VignettePath>
+</Banner>
+<Banner>
+  <id>1284856</id>
+  <BannerPath>fanart/original/5b05acd412777.jpg</BannerPath>
+  <BannerType>fanart</BannerType>
+  <BannerType2>1280x720</BannerType2>
+  <Colors></Colors>
+  <Language>en</Language>
+  <Rating>7.0000</Rating>
+  <RatingCount>3</RatingCount>
+  <SeriesName>false</SeriesName>
+  <ThumbnailPath>_cache/fanart/original/5b05acd412777.jpg</ThumbnailPath>
+  <VignettePath>fanart/vignette/5b05acd412777.jpg</VignettePath>
+</Banner>
+<Banner>
+  <id>1284854</id>
+  <BannerPath>fanart/original/5b05acbf47e6c.jpg</BannerPath>
+  <BannerType>fanart</BannerType>
+  <BannerType2>1280x720</BannerType2>
+  <Colors></Colors>
+  <Language>en</Language>
+  <Rating>6.0000</Rating>
+  <RatingCount>4</RatingCount>
+  <SeriesName>false</SeriesName>
+  <ThumbnailPath>_cache/fanart/original/5b05acbf47e6c.jpg</ThumbnailPath>
+  <VignettePath>fanart/vignette/5b05acbf47e6c.jpg</VignettePath>
+</Banner>
+<Banner>
+  <id>1284676</id>
+  <BannerPath>fanart/original/5b04ab7e6b840.jpg</BannerPath>
+  <BannerType>fanart</BannerType>
+  <BannerType2>1280x720</BannerType2>
+  <Colors></Colors>
+  <Language>en</Language>
+  <Rating>4.3333</Rating>
+  <RatingCount>3</RatingCount>
+  <SeriesName>false</SeriesName>
+  <ThumbnailPath>_cache/fanart/original/5b04ab7e6b840.jpg</ThumbnailPath>
+  <VignettePath>fanart/vignette/5b04ab7e6b840.jpg</VignettePath>
+</Banner>
+<Banner>
+  <id>1302197</id>
+  <BannerPath>fanart/original/5b7d744989f7f.jpg</BannerPath>
+  <BannerType>fanart</BannerType>
+  <BannerType2>1280x720</BannerType2>
+  <Colors></Colors>
+  <Language>en</Language>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeriesName>false</SeriesName>
+  <ThumbnailPath>_cache/fanart/original/5b7d744989f7f.jpg</ThumbnailPath>
+  <VignettePath>fanart/vignette/5b7d744989f7f.jpg</VignettePath>
+</Banner>
+<Banner>
+  <id>1302196</id>
+  <BannerPath>fanart/original/5b7d73d1cc7d1.jpg</BannerPath>
+  <BannerType>fanart</BannerType>
+  <BannerType2>1280x720</BannerType2>
+  <Colors></Colors>
+  <Language>en</Language>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <SeriesName>false</SeriesName>
+  <ThumbnailPath>_cache/fanart/original/5b7d73d1cc7d1.jpg</ThumbnailPath>
+  <VignettePath>fanart/vignette/5b7d73d1cc7d1.jpg</VignettePath>
+</Banner>
+<Banner>
+  <id>1295622</id>
+  <BannerPath>posters/5b4daafab106b.jpg</BannerPath>
+  <BannerType>poster</BannerType>
+  <BannerType2>680x1000</BannerType2>
+  <Language>en</Language>
+  <Rating>8.7143</Rating>
+  <RatingCount>7</RatingCount>
+</Banner>
+<Banner>
+  <id>1285400</id>
+  <BannerPath>posters/5b098c74bacc0.jpg</BannerPath>
+  <BannerType>poster</BannerType>
+  <BannerType2>680x1000</BannerType2>
+  <Language>en</Language>
+  <Rating>7.1429</Rating>
+  <RatingCount>7</RatingCount>
+</Banner>
+<Banner>
+  <id>1301422</id>
+  <BannerPath>posters/5b782f6dd9ed9.jpg</BannerPath>
+  <BannerType>poster</BannerType>
+  <BannerType2>680x1000</BannerType2>
+  <Language>es</Language>
+  <Rating>6.4000</Rating>
+  <RatingCount>5</RatingCount>
+</Banner>
+<Banner>
+  <id>1284679</id>
+  <BannerPath>posters/5b04ac0d8d649.jpg</BannerPath>
+  <BannerType>poster</BannerType>
+  <BannerType2>680x1000</BannerType2>
+  <Language>en</Language>
+  <Rating>2.2500</Rating>
+  <RatingCount>4</RatingCount>
+</Banner>
+<Banner>
+  <id>1301228</id>
+  <BannerPath>posters/5b76f59c2f148.jpg</BannerPath>
+  <BannerType>poster</BannerType>
+  <BannerType2>680x1000</BannerType2>
+  <Language>fr</Language>
+  <Rating>1.0000</Rating>
+  <RatingCount>1</RatingCount>
+</Banner>
+<Banner>
+  <id>1301820</id>
+  <BannerPath>posters/5b7aa3ec3a0f1.jpg</BannerPath>
+  <BannerType>poster</BannerType>
+  <BannerType2>680x1000</BannerType2>
+  <Language>en</Language>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+</Banner>
+<Banner>
+  <id>1302567</id>
+  <BannerPath>seasons/5b7fdef85e716.jpg</BannerPath>
+  <BannerType>season</BannerType>
+  <BannerType2>season</BannerType2>
+  <Language>en</Language>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <Season>1</Season>
+</Banner>
+<Banner>
+  <id>1301251</id>
+  <BannerPath>seasons/5b7705ca5f164.jpg</BannerPath>
+  <BannerType>season</BannerType>
+  <BannerType2>season</BannerType2>
+  <Language>en</Language>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+  <Season>1</Season>
+</Banner>
+<Banner>
+  <id>1303883</id>
+  <BannerPath>graphical/5b8784d463e99.jpg</BannerPath>
+  <BannerType>series</BannerType>
+  <BannerType2>graphical</BannerType2>
+  <Language>en</Language>
+  <Rating>10.0000</Rating>
+  <RatingCount>1</RatingCount>
+</Banner>
+<Banner>
+  <id>1303889</id>
+  <BannerPath>graphical/5b8794937085b.jpg</BannerPath>
+  <BannerType>series</BannerType>
+  <BannerType2>graphical</BannerType2>
+  <Language>en</Language>
+  <Rating>9.0000</Rating>
+  <RatingCount>1</RatingCount>
+</Banner>
+<Banner>
+  <id>1301827</id>
+  <BannerPath>graphical/5b7ab0cae6b7b.jpg</BannerPath>
+  <BannerType>series</BannerType>
+  <BannerType2>graphical</BannerType2>
+  <Language>en</Language>
+  <Rating>4.0000</Rating>
+  <RatingCount>2</RatingCount>
+</Banner>
+<Banner>
+  <id>1284684</id>
+  <BannerPath>graphical/5b04af1fb0f66.jpg</BannerPath>
+  <BannerType>series</BannerType>
+  <BannerType2>graphical</BannerType2>
+  <Language>en</Language>
+  <Rating>1.0000</Rating>
+  <RatingCount>1</RatingCount>
+</Banner>
+<Banner>
+  <id>1302432</id>
+  <BannerPath>graphical/5b7f06e561974.jpg</BannerPath>
+  <BannerType>series</BannerType>
+  <BannerType2>graphical</BannerType2>
+  <Language>en</Language>
+  <Rating></Rating>
+  <RatingCount>0</RatingCount>
+</Banner>
+</Banners><?xml version="1.0" encoding="UTF-8" ?>
+<Actors>
+<Actor>
+  <id>497630</id>
+  <Image>actors/497630.jpg</Image>
+  <Name>John DiMaggio</Name>
+  <Role>King Zøg</Role>
+  <SortOrder>1</SortOrder>
+</Actor>
+<Actor>
+  <id>472740</id>
+  <Image>actors/472740.jpg</Image>
+  <Name>Eric André</Name>
+  <Role>Luci</Role>
+  <SortOrder>1</SortOrder>
+</Actor>
+<Actor>
+  <id>472739</id>
+  <Image>actors/472739.jpg</Image>
+  <Name>Nat Faxon</Name>
+  <Role>Elfo</Role>
+  <SortOrder>1</SortOrder>
+</Actor>
+<Actor>
+  <id>463606</id>
+  <Image>actors/463606.jpg</Image>
+  <Name>Abbi Jacobson</Name>
+  <Role>Princess Bean</Role>
+  <SortOrder>1</SortOrder>
+</Actor>
+</Actors>

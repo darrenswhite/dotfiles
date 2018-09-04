@@ -1,0 +1,32 @@
+<sources>
+    <programs>
+        <default pathversion="1"></default>
+    </programs>
+    <video>
+        <default pathversion="1"></default>
+        <source>
+            <name>2160p</name>
+            <path pathversion="1">/media/orion/videos/2160p/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>series</name>
+            <path pathversion="1">/media/orion/videos/series/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>1080p</name>
+            <path pathversion="1">/media/orion/videos/1080p</path>
+            <allowsharing>true</allowsharing>
+        </source>
+    </video>
+    <music>
+        <default pathversion="1"></default>
+    </music>
+    <pictures>
+        <default pathversion="1"></default>
+    </pictures>
+    <files>
+        <default pathversion="1"></default>
+    </files>
+</sources>

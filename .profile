@@ -29,4 +29,4 @@ export GOROOT=/home/darren/.local/share/umake/go/go-lang
 PATH=/home/darren/.local/share/umake/bin:$PATH
 
 # prevent screen tearing with Nvidia GPU
-nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }" 2>/dev/null || true
