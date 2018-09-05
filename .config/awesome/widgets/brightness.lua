@@ -1,13 +1,17 @@
 --[[
+
 Brightness control
 ==================
-based on `xbacklight`!
+
+based on `light`!
+
 alternative ways to control brightness:
     sudo setpci -s 00:02.0 F4.B=80
     xgamma -gamma .75
     xrandr --output LVDS1 --brightness 0.9
     echo X > /sys/class/backlight/intel_backlight/brightness
     xbacklight
+
 --]]
 
 local awful = require("awful")
@@ -56,7 +60,7 @@ function vcontrol:new(args)
 end
 
 function vcontrol:init(args)
-    self.cmd = "xbacklight"
+    self.cmd = "light"
     self.step = args.step or '5'
 
     self.widget = wibox.widget.textbox()
@@ -83,23 +87,23 @@ function vcontrol:exec(...)
 end
 
 function vcontrol:get()
-    local brightness = math.floor(0.5+tonumber(self:exec("-get")))
-    self.widget:set_text(string.format(" [%3d] ", brightness))
+    local brightness = math.floor(0.5+tonumber(self:exec("-G")))
+    self.widget:set_text(string.format(" %d ", brightness))
     return brightness
 end
 
 function vcontrol:set(brightness)
-    self:exec('-set', tostring(brightness))
+    self:exec('-S', tostring(brightness))
     self:get()
 end
 
 function vcontrol:up(step)
-    self:exec("-inc", step or self.step)
+    self:exec("-A", step or self.step)
     self:get()
 end
 
 function vcontrol:down(step)
-    self:exec("-dec", step or self.step)
+    self:exec("-U", step or self.step)
     self:get()
 end
 

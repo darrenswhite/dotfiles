@@ -121,8 +121,20 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+-- Create a calendar widget
+calendar = require("widgets.calendar")
+calendar({}):attach(mytextclock)
+
 -- Create a volume widget
-volume_widget = require("widgets.volume")
+volume = require("widgets.volume")
+volumectl = volume({device="pulse"})
+
+-- Create a battery widget
+battery_widget = require("widgets.battery"){}
+
+-- Create a brightness widget
+brightness = require("widgets.brightness")
+brightnessctl = brightness({})
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -214,9 +226,6 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
-    -- Widget separator
-    sep = wibox.widget.textbox(" ")
-
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -229,9 +238,9 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
-            sep,
-            volume_widget,
-            sep,
+            battery_widget,
+            brightnessctl.widget,
+            volumectl.widget,
             mytextclock,
         },
     }
@@ -272,11 +281,11 @@ globalkeys = gears.table.join(
               {description = "lock the screen", group = "user"}),
 
     -- Function keys
-    awful.key({}, "XF86AudioMute", function () awful.spawn("amixer -D pulse set Master +1 toggle") end,
+    awful.key({}, "XF86AudioMute", function () volumectl:toggle() end,
               {description = "mute volume", group = "media keys"}),
-    awful.key({}, "XF86AudioLowerVolume", function () awful.spawn("amixer -D pulse sset Master 5%-") end,
+    awful.key({}, "XF86AudioLowerVolume", function () volumectl:down() end,
               {description = "decrease volume", group = "media keys"}),
-    awful.key({}, "XF86AudioRaiseVolume", function () awful.spawn("amixer -D pulse sset Master 5%+") end,
+    awful.key({}, "XF86AudioRaiseVolume", function () volumectl:up() end,
 
               {description = "increase volume", group = "media keys"}),
     awful.key({}, "XF86AudioPrev", sendToSpotify("Previous"),
@@ -286,9 +295,9 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioNext", sendToSpotify("Next"),
               {description = "next", group = "media keys"}),
 
-    awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("light -U 10") end,
+    awful.key({}, "XF86MonBrightnessDown", function () brightnessctl:down() end,
               {description = "decrease brightness", group = "media keys"}),
-    awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("light -A 10") end,
+    awful.key({}, "XF86MonBrightnessUp", function () brightnessctl:up() end,
               {description = "increase brightness", group = "media keys"}),
 
     -- Layout manipulation
