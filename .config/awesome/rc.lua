@@ -527,7 +527,7 @@ awful.rules.rules = {
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons,
-                     screen = awful.screen.focused(),
+                     screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen+awful.placement.centered,
                      size_hints_honor = false,
      }
