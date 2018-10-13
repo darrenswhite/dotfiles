@@ -6,7 +6,7 @@ function run {
   fi
 }
 
-run "compton"
+#run "compton"
 run "dropbox" "start"
 run "libinput-gestures"
 run "redshift-gtk"
