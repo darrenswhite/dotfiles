@@ -17,6 +17,8 @@ require("awful.hotkeys_popup.keys")
 -- Load Debian menu entries
 local debian = require("debian.menu")
 
+local xrandr = require("xrandr")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -275,6 +277,8 @@ globalkeys = gears.table.join(
               {description = "go back", group = "tag"}),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
+    awful.key({ modkey,           }, "0", function () xrandr.xrandr() end,
+              {description = "xrandr", group = "awesome"}),
 
     -- User
     awful.key({ modkey,           }, "l", function () awful.spawn("dm-tool lock") end,
