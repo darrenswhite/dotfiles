@@ -1,7 +1,7 @@
-Xft.dpi:                    172
+Xft.dpi:                    192
 
-urxvt.font:                 xft: Terminus:autohint=true:antialias=true:size=10
-urxvt.boldFont:             xft: Terminus:autohint=true:antialias=true:size=10:weight=bold
+urxvt.font:                 xft: Terminus:autohint=true:antialias=true:size=12
+urxvt.boldFont:             xft: Terminus:autohint=true:antialias=true:size=12:weight=bold
 urxvt.depth:                32
 urxvt.background:           [70]#000000
 urxvt.foreground:           #ffffff
