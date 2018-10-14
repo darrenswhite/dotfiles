@@ -1,1 +1,4 @@
-rofi.theme: /usr/share/rofi/themes/Monokai.rasi
+rofi.combi-modi: window,drun,ssh
+rofi.modi:       combi
+rofi.font:       terminus 10
+rofi.theme:      /usr/share/rofi/themes/Monokai.rasi

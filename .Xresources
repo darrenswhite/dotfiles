@@ -16,9 +16,10 @@ urxvt.keysym.Control-Up:    \033[1;5A
 urxvt.keysym.Control-Down:  \033[1;5B
 urxvt.keysym.Control-Left:  \033[1;5D
 urxvt.keysym.Control-Right: \033[1;5C
-urxvt.perl-ext-common:      default,matcher,resize-font,url-select,keyboard-select
+urxvt.perl-ext-common:      default,matcher
 urxvt.url-select.launcher:  /usr/bin/xdg-open
 urxvt.url-select.underline: true
+urxvt.matcher.button:       1
 urxvt.saveLnes:             65535
 urxvt.scrollTtyOutput:      false
 urxvt.scrollTtyKeypress:    true
