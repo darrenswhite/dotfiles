@@ -3,10 +3,10 @@ Xft.dpi:                    172
 urxvt.font:                 xft: Terminus:autohint=true:antialias=true:size=10
 urxvt.boldFont:             xft: Terminus:autohint=true:antialias=true:size=10:weight=bold
 urxvt.depth:                32
-urxvt.background:           [50]#000000
+urxvt.background:           [70]#000000
 urxvt.foreground:           #ffffff
 urxvt.scrollBar:            false
-urxvt.fading:               30
+urxvt.fading:               15
 urxvt.fadeColor:            #000000
 urxvt.cursorBlink:          true
 urxvt.cursorUnderline:      true
