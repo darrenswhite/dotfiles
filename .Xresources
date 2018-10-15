@@ -24,3 +24,9 @@ urxvt.saveLnes:             65535
 urxvt.scrollTtyOutput:      false
 urxvt.scrollTtyKeypress:    true
 urxvt.scrollWithBuffer:     false
+
+rofi.combi-modi: window,drun,ssh
+rofi.modi:       combi
+rofi.font:       terminus 12
+rofi.dpi:        192
+rofi.theme:      /usr/share/rofi/themes/Monokai.rasi

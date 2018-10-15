@@ -3,8 +3,10 @@
 local awful     = require("awful")
 local naughty   = require("naughty")
 
--- A path to a fancy icon
-local icon_path = ""
+local custom_layouts = {
+  ["DP1"] = " --output DP1 --auto --pos 0x0 --scale 2x2",
+  ["eDP1_DP1"] = " --output eDP1 --auto --pos 0x2880 --output DP1 --auto --scale 2x2 --pos 0x0"
+}
 
 -- Get active outputs
 local function outputs()
@@ -15,8 +17,9 @@ local function outputs()
       for line in xrandr:lines() do
          local output = line:match("^([%w-]+) connected ")
          if output then
+
             outputs[#outputs + 1] = output
-                                   end
+         end
       end
       xrandr:close()
    end
@@ -57,13 +60,27 @@ local function menu()
 
    for _, choice in pairs(choices) do
       local cmd = "xrandr"
-      -- Enabled outputs
+      local layout = ""
+
       for i, o in pairs(choice) do
-         cmd = cmd .. " --output " .. o .. " --auto"
          if i > 1 then
-            cmd = cmd .. " --right-of " .. choice[i-1]
+           layout = layout .. "_"
          end
+         layout = layout .. o
       end
+
+      if custom_layouts[layout] ~= nil then
+        cmd = cmd .. custom_layouts[layout]
+      else
+        -- Enabled outputs
+        for i, o in pairs(choice) do
+           cmd = cmd .. " --output " .. o .. " --auto"
+           if i > 1 then
+              cmd = cmd .. " --right-of " .. choice[i-1]
+           end
+        end
+      end
+
       -- Disabled outputs
       for _, o in pairs(out) do
          if not awful.util.table.hasitem(choice, o) then
@@ -76,7 +93,9 @@ local function menu()
          label = 'Only <span weight="bold">' .. choice[1] .. '</span>'
       else
          for i, o in pairs(choice) do
-            if i > 1 then label = label .. " + " end
+            if i > 1 then
+              label = label .. " + "
+            end
             label = label .. '<span weight="bold">' .. o .. '</span>'
          end
       end
@@ -96,6 +115,7 @@ local function naughty_destroy_callback(reason)
     local action = state.index and state.menu[state.index - 1][2]
     if action then
       awful.util.spawn(action, false)
+      awesome.restart()
       state.index = nil
     end
   end
@@ -120,7 +140,6 @@ local function xrandr()
       label, action = table.unpack(next)
    end
    state.cid = naughty.notify({ text = label,
-                                icon = icon_path,
                                 timeout = 4,
                                 screen = mouse.screen,
                                 replaces_id = state.cid,

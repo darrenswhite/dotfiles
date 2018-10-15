@@ -277,7 +277,7 @@ globalkeys = gears.table.join(
               {description = "go back", group = "tag"}),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
-    awful.key({ modkey,           }, "0", function () xrandr.xrandr() end,
+    awful.key({ modkey,           }, "p", function () xrandr.xrandr() end,
               {description = "xrandr", group = "awesome"}),
 
     -- User
@@ -411,10 +411,6 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
 
     -- Rofi
     awful.key({ modkey }, "d", function() awful.util.spawn("rofi -show combi") end,
@@ -660,11 +656,12 @@ wp_path = os.getenv("HOME") .. "/Dropbox/Pictures/wallpapers/3440x1440/"
 wp_files = scandir(wp_path)
 
 gears.timer({
-    timeout = 60,
+    timeout = 30,
     autostart = true,
     callback = function()
+        local r_wp_path = wp_path .. wp_files[math.random(1, #wp_files)]
         for s in screen do
-            gears.wallpaper.centered(wp_path .. wp_files[math.random(1, #wp_files)], s, gears.color("black"), s.geometry.height / 1440)
+            gears.wallpaper.centered(r_wp_path, s, gears.color("black"), s.geometry.height / 1440)
         end
     end
 }):emit_signal("timeout")
