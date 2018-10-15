@@ -269,9 +269,9 @@ end
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
+    awful.key({ modkey,           }, "[",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
+    awful.key({ modkey,           }, "]",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
@@ -305,12 +305,12 @@ globalkeys = gears.table.join(
               {description = "increase brightness", group = "media keys"}),
 
     -- Layout manipulation
-    awful.key({ modkey,         }, "Up", function () awful.client.cycle(true) end,
+    awful.key({ modkey,         }, "=", function () awful.client.cycle(true) end,
               {description = "cycle clients clockwise", group = "layout"}),
-    awful.key({ modkey,         }, "Down", function () awful.client.cycle(false) end,
+    awful.key({ modkey,         }, "-", function () awful.client.cycle(false) end,
               {description = "cycle clients counter-clockwise", group = "layout"}),
 
-    awful.key({ modkey, "Shift" }, "Left",
+    awful.key({ modkey, "Shift" }, "[",
         function ()
             local t = client.focus and client.focus.first_tag or nil
             if t == nil then
@@ -322,7 +322,7 @@ globalkeys = gears.table.join(
             awful.tag.viewprev()
         end,
         {description = "move client to previous tag and switch to it", group = "layout"}),
-    awful.key({ modkey, "Shift" }, "Right",
+    awful.key({ modkey, "Shift" }, "]",
         function ()
             local t = client.focus and client.focus.first_tag or nil
             if t == nil then
@@ -339,6 +339,48 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
 
+    awful.key({ modkey,           }, "Up",
+        function ()
+            awful.client.focus.global_bydirection("up")
+        end,
+        {description = "focus client in the up direction", group = "client"}),
+    awful.key({ modkey,           }, "Down",
+        function ()
+            awful.client.focus.global_bydirection("down")
+        end,
+        {description = "focus client in the down direction", group = "client"}),
+    awful.key({ modkey,           }, "Left",
+        function ()
+            awful.client.focus.global_bydirection("left")
+        end,
+        {description = "focus client in the left direction", group = "client"}),
+    awful.key({ modkey,           }, "Right",
+        function ()
+            awful.client.focus.global_bydirection("right")
+        end,
+        {description = "focus client in the right direction", group = "client"}),
+
+    awful.key({ modkey, "Shift"   }, "Up",
+        function ()
+            awful.client.swap.global_bydirection("up")
+        end,
+        {description = "focus client in the up direction", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Down",
+        function ()
+            awful.client.swap.global_bydirection("down")
+        end,
+        {description = "focus client in the down direction", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Left",
+        function ()
+            awful.client.swap.global_bydirection("left")
+        end,
+        {description = "focus client in the left direction", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "Right",
+        function ()
+            awful.client.swap.global_bydirection("right")
+        end,
+        {description = "focus client in the right direction", group = "client"}),
+
     awful.key({ "Mod1",           }, "Tab",
         function ()
             awful.client.focus.byidx(-1)
@@ -346,7 +388,7 @@ globalkeys = gears.table.join(
                 client.focus:raise()
             end
         end,
-        {description = "focus previous by index", group = "client"}),
+        {description = "focus next client", group = "client"}),
     awful.key({ "Mod1", "Shift"   }, "Tab",
         function ()
             awful.client.focus.byidx(1)
@@ -354,7 +396,7 @@ globalkeys = gears.table.join(
                 client.focus:raise()
             end
         end,
-        {description = "focus next by index", group = "client"}),
+        {description = "focus previous client", group = "client"}),
 
     -- Standard program
     awful.key({ modkey               }, "Return", function () awful.spawn(terminal) end,
