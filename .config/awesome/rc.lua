@@ -281,7 +281,7 @@ globalkeys = gears.table.join(
               {description = "xrandr", group = "awesome"}),
 
     -- User
-    awful.key({ modkey,           }, "l", function () awful.spawn("dm-tool lock") end,
+    awful.key({ modkey,           }, "l", function () awful.spawn.with_shell("~/.config/awesome/lock.sh") end,
               {description = "lock the screen", group = "user"}),
 
     -- Function keys
