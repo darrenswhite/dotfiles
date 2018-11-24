@@ -22,11 +22,20 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
 
 # Ubuntu make installation of Go Lang
-PATH=/home/darren/.local/share/umake/go/go-lang/bin:$PATH
-export GOROOT=/home/darren/.local/share/umake/go/go-lang
-
-# Ubuntu make installation of Ubuntu Make binary symlink
-PATH=/home/darren/.local/share/umake/bin:$PATH
+PATH=$HOME/.local/share/umake/go/go-lang/bin:$PATH
+export GOROOT=$HOME/.local/share/umake/go/go-lang
 
 # prevent screen tearing with Nvidia GPU
 nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }" 2>/dev/null || true
+
+# Ubuntu make installation of Ubuntu Make binary symlink
+PATH=$HOME/.local/share/umake/bin:$PATH
+
+# Add Dart SDK to path
+PATH=/usr/lib/dart/bin:$PATH
+
+# Add Flutter to path
+PATH=$HOME/workspace/flutter/bin:$PATH
+
+# Add npm to path
+PATH=$HOME/.npm-global/bin:$PATH
