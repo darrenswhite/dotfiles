@@ -34,6 +34,9 @@ PATH=$HOME/.local/share/umake/bin:$PATH
 # Add Dart SDK to path
 PATH=/usr/lib/dart/bin:$PATH
 
+# Add pub cache to path
+PATH=$HOME/.pub-cache/bin:$PATH
+
 # Add Flutter to path
 PATH=$HOME/workspace/flutter/bin:$PATH
 

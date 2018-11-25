@@ -4,8 +4,8 @@ local awful     = require("awful")
 local naughty   = require("naughty")
 
 local custom_layouts = {
-  ["DP1"] = " --output DP1 --auto --pos 0x0 --scale 2x2",
-  ["eDP1_DP1"] = " --output eDP1 --auto --pos 0x2880 --output DP1 --auto --scale 2x2 --pos 0x0"
+  ["DP1"] = " --output DP1 --auto",
+  ["eDP1_DP1"] = " --output eDP1 --auto --below DP1 --output DP1 --auto"
 }
 
 -- Get active outputs
