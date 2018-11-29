@@ -12,19 +12,27 @@ local default_layout = "eDP1_DP1"
 local fallback_layout = "eDP1"
 
 -- Get active outputs
-local function outputs()
+local function outputs(disconnected)
   local outputs = {}
   local xrandr = io.popen("xrandr -q --current")
 
   if xrandr then
+    local output
     for line in xrandr:lines() do
-      local output = line:match("^([%w-]+) connected ")
+      if disconnected then
+        output = line:match("^([%w-]+) disconnected ")
+      else
+        output = line:match("^([%w-]+) connected ")
+      end
+
       if output then
         outputs[#outputs + 1] = output
       end
     end
     xrandr:close()
   end
+
+  naughty.notify({text=""..#outputs})
 
   return outputs
 end
@@ -57,8 +65,9 @@ end
 -- Build available choices
 local function menu()
   local menu = {}
-  local out = outputs()
-  local choices = arrange(out)
+  local connected = outputs(false)
+  local disconnected = outputs(true)
+  local choices = arrange(connected)
 
   for _, choice in pairs(choices) do
     local cmd = "xrandr"
@@ -84,10 +93,15 @@ local function menu()
     end
 
     -- Disabled outputs
-    for _, o in pairs(out) do
+    for _, o in pairs(connected) do
       if not awful.util.table.hasitem(choice, o) then
         cmd = cmd .. " --output " .. o .. " --off"
       end
+    end
+
+    -- Disconnected outputs
+    for _, o in pairs(disconnected) do
+      cmd = cmd .. " --output " .. o .. " --off"
     end
 
     local label = ""
@@ -121,6 +135,7 @@ end
 local function execute(restart)
   local action = state.index and state.menu[state.index - 1][3]
   if action then
+    naughty.notify({text=action})
     awful.util.spawn(action, false)
     state.index = nil
 
