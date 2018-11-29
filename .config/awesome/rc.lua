@@ -19,6 +19,9 @@ local debian = require("debian.menu")
 
 local xrandr = require("xrandr")
 
+-- Set notifications default position
+naughty.config.defaults.position = "top_left"
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -43,6 +46,8 @@ do
     end)
 end
 -- }}}
+
+xrandr.default()
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
@@ -707,15 +712,22 @@ wp_path = os.getenv("HOME") .. "/Dropbox/Pictures/wallpapers/3440x1440/"
 wp_files = scandir(wp_path)
 
 gears.timer({
-    timeout = 30,
+    timeout = 0.5,
     autostart = true,
+    single_shot = true,
     callback = function()
-        local r_wp_path = wp_path .. wp_files[math.random(1, #wp_files)]
-        for s in screen do
-            gears.wallpaper.centered(r_wp_path, s, gears.color("black"), s.geometry.height / 1440)
-        end
+        gears.timer({
+            timeout = 30,
+            autostart = true,
+            callback = function()
+                local r_wp_path = wp_path .. wp_files[math.random(1, #wp_files)]
+                for s in screen do
+                    gears.wallpaper.centered(r_wp_path, s, gears.color("black"), s.geometry.height / 1440)
+                end
+            end
+        }):emit_signal("timeout")
     end
-}):emit_signal("timeout")
+})
 
 menubar.menu_gen.lookup_category_icons = function () end
 menubar.show_categories = false
