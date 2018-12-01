@@ -32,8 +32,6 @@ local function outputs(disconnected)
     xrandr:close()
   end
 
-  naughty.notify({text=""..#outputs})
-
   return outputs
 end
 
@@ -135,7 +133,6 @@ end
 local function execute(restart)
   local action = state.index and state.menu[state.index - 1][3]
   if action then
-    naughty.notify({text=action})
     awful.util.spawn(action, false)
     state.index = nil
 
@@ -163,11 +160,13 @@ local function xrandr()
   else
     _, label, action = table.unpack(next)
   end
-  state.cid = naughty.notify({ text = label,
+  state.cid = naughty.notify({
+    text = label,
     timeout = 4,
     screen = mouse.screen,
     replaces_id = state.cid,
-  destroy = naughty_destroy_callback}).id
+    destroy = naughty_destroy_callback
+  }).id
 end
 
 local function default()

@@ -90,12 +90,17 @@ awful.layout.layouts = {
 local function client_menu_toggle_fn()
     local instance = nil
 
-    return function ()
+    return function (c)
         if instance and instance.wibox.visible then
             instance:hide()
             instance = nil
         else
-            instance = awful.menu.clients({ theme = { width = 250 } })
+            instance = awful.menu({ items = {
+                { "Close", function()
+                    c:kill()
+                end }
+            }})
+            instance:show()
         end
     end
 end
