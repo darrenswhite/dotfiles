@@ -135,7 +135,7 @@ mytextclock = wibox.widget.textclock()
 
 -- Create a calendar widget
 calendar = require("widgets.calendar")
-calendar({}):attach(mytextclock)
+calendar({ position = "top_right" }):attach(mytextclock)
 
 -- Create a volume widget
 volume = require("widgets.volume")
@@ -614,7 +614,7 @@ awful.rules.rules = {
           "AlarmWindow",  -- Thunderbird's calendar.
           "pop-up"        -- e.g. Google Chrome's (detached) Developer Tools.
         }
-      }, properties = { floating = true }},
+      }, properties = { floating = true, placement = centered }},
 
     -- On top clients
     { rule_any = {
