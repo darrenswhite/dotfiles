@@ -49,6 +49,8 @@ end
 
 xrandr.default()
 
+math.randomseed(os.time())
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/custom/theme.lua")
