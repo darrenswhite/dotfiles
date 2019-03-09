@@ -272,7 +272,7 @@ root.buttons(gears.table.join(
 -- {{{ Spotify
 function sendToSpotify(command)
   return function ()
-    awful.util.spawn_with_shell("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player." .. command)
+    awful.spawn.with_shell("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player." .. command)
   end
 end
 -- }}}
@@ -467,8 +467,14 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
 
     -- Rofi
-    awful.key({ modkey }, "d", function() awful.util.spawn("rofi -show combi") end,
-              {description = "show rofi combi", group = "launcher"})
+    awful.key({ modkey }, "d", function() awful.spawn("rofi -show combi") end,
+              {description = "show rofi combi", group = "launcher"}),
+
+    -- Keepass2
+    awful.key({ "Control", "Mod1" }, "k", function () awful.spawn("keepass2") end,
+              {description = "Keepass2", group = "launcher"}),
+    awful.key({ "Control", "Mod1" }, "q", function () awful.spawn("keepass2 --auto-type") end,
+              {description = "Keepass2 autotype", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
