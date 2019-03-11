@@ -8,6 +8,7 @@ function run {
 
 run "compton"
 run "dropbox" "start"
+run "keepass2"
 run "libinput-gestures"
 run "redshift-gtk"
 run "solaar"
