@@ -616,7 +616,8 @@ awful.rules.rules = {
         },
         name = {
           "Event Tester",  -- xev.
-          "Emulator"
+          "Emulator",
+          "Open Database - database.kdbx"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
