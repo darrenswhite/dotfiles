@@ -1,0 +1,19 @@
+FROM node:8.16.0-alpine
+
+WORKDIR /chosenlegends
+
+ADD server/package*.json ./server/
+
+RUN npm --prefix ./server install --unsafe-perm ./server
+
+ADD server/src server/tsconfig.json server/
+ADD assets assets/
+
+RUN npm --prefix ./server run compile
+
+EXPOSE 8080
+
+HEALTHCHECK --interval=10s --timeout=10s --start-period=10s \
+ CMD node server/healthcheck.js
+
+CMD ["node", "server/build/index.js"]

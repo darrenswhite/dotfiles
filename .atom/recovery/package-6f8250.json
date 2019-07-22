@@ -1,0 +1,30 @@
+{
+  "name": "colyseus-poc",
+  "version": "0.0.1",
+  "description": "Chosen Legends POC",
+  "main": "index.js",
+  "scripts": {
+    "check": "npm run check --prefix ./server && npm run check --prefix ./client",
+    "clean": "npm run clean --prefix ./server && npm run clean --prefix ./client",
+    "compile": "npm run compile --prefix ./server && npm run compile --prefix ./client",
+    "dev": "concurrently \"npm run dev --prefix ./server\" \"npm run dev --prefix ./client\"",
+    "fix": "npm run fix --prefix ./server && npm run fix --prefix ./client",
+    "postinstall": "npm install --prefix ./server && npm install --prefix ./client",
+    "start": "npm run compile && node ./server/build/index.js",
+    "test": "npm run test --prefix ./server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/darrenswhite/chosenlegends.git"
+  },
+  "author": "Darren S. White",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darrenswhite/chosenlegends/issues"
+  },
+  "homepage": "https://github.com/darrenswhite/chosenlegends#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
