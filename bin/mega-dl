@@ -1,1 +1,1 @@
-mega-get -q $1 /mnt/voyager/share/mega/
+mega-get --ignore-quota-warn -q $1 /mnt/voyager/share/mega/
