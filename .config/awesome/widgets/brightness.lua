@@ -87,7 +87,8 @@ function vcontrol:exec(...)
 end
 
 function vcontrol:get()
-    local brightness = math.floor(0.5+tonumber(self:exec("-G")))
+    local brightness_value = tonumber(self:exec("-G")) or 0
+    local brightness = math.floor(0.5+brightness_value)
     self.widget:set_text(string.format(" %d ", brightness))
     return brightness
 end
