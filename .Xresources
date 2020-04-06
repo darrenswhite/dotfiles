@@ -1,4 +1,4 @@
-Xft.dpi:                    120
+Xft.dpi:                    196
 
 urxvt.font:                 xft: Terminus:autohint=true:antialias=true:size=12
 urxvt.boldFont:             xft: Terminus:autohint=true:antialias=true:size=12:weight=bold
@@ -28,6 +28,6 @@ urxvt.scrollWithBuffer:     false
 rofi.combi-modi:            window,drun,ssh
 rofi.modi:                  combi
 rofi.font:                  terminus 12
-rofi.dpi:                   120
+rofi.dpi:                   196
 rofi.theme:                 /usr/share/rofi/themes/Monokai.rasi
 rofi.terminal:              urxvt
