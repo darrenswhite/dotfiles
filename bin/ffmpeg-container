@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -ex
+
+INPUT="${1}"
+CONTAINER="${2}"
+FILENAME="${INPUT%.*}"
+NEW_FILENAME="${FILENAME}.${CONTAINER}"
+
+ffmpeg -i "${INPUT}" -c copy "${NEW_FILENAME}"
