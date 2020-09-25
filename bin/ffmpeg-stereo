@@ -5,6 +5,6 @@ set -ex
 INPUT="${1}"
 FILENAME="${INPUT%.*}"
 EXTENSION="${INPUT##*.}"
-NEW_FILENAME="${FILENAME}.stereo.${EXTENSION}"
+OUTPUT="${FILENAME}.stereo.${EXTENSION}"
 
-ffmpeg -i "${INPUT}" -c:v copy -c:a aac -ac 2 "${NEW_FILENAME}"
+ffmpeg -i "${INPUT}" -c:v copy -c:a aac -ac 2 -c:s copy "${OUTPUT}"

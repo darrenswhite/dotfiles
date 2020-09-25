@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -ex
+
+INPUT="${1}"
+FILENAME="${INPUT%.*}"
+EXTENSION="${INPUT##*.}"
+OUTPUT="${FILENAME}.x264.${EXTENSION}"
+
+ffmpeg -i "${INPUT}" -c:v libx264 -crf 18 -vf format=yuv420p -c:a copy -c:s copy "${OUTPUT}"
