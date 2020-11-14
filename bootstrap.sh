@@ -4,7 +4,7 @@ set -e
 
 cd "$(dirname "${BASH_SOURCE}")";
 
-git pull origin master
+git pull origin main
 
 SYNC_DIR="${1:-${HOME}}"
 
