@@ -7,6 +7,28 @@
 [push]
 	default = simple
 [pull]
-	rebase = interactive
+	rebase = true
 [rebase]
 	autoStash = true
+[alias]
+	a = add
+	ap = add -p
+	b = branch
+	ba = branch -a
+	bd = branch -d
+	bD = branch -D
+	c = commit -v
+	ca = commit -av
+	cam = commit -v --amend
+	camne = commit --amend --no-edit
+	co = checkout
+	cob = checkout -b
+	d = diff
+	dc = diff --cached
+	ds = diff --stat
+	f = fetch -p
+	g = grep
+	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	m = merge
+	p = push
+	s = status -bs
