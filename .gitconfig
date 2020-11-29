@@ -20,7 +20,9 @@
 	c = commit -v
 	ca = commit -av
 	cam = commit -v --amend
+	caam = commit -av --amend
 	camne = commit --amend --no-edit
+	caamne = commit -a --amend --no-edit
 	co = checkout
 	cob = checkout -b
 	d = diff
