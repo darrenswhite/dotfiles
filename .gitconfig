@@ -35,5 +35,6 @@
 	m = merge
 	p = push
 	q = pull
-	r = "!f() { git push ${1:-origin} HEAD:refs/for/${2-:$(git bn)} }; f"
+	r = rebase
+	rv = "!f() { git push ${1:-origin} HEAD:refs/for/${2-:$(git bn)} }; f"
 	s = status -bs
