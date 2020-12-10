@@ -26,6 +26,7 @@
 	camn = commit -a --amend --no-edit
 	co = checkout
 	cob = checkout -b
+	cp = cherry-pick
 	d = diff
 	dc = diff --cached
 	ds = diff --stat
