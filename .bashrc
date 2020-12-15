@@ -116,3 +116,5 @@ fi
 export PS1="\[\033[38;5;208m\]\u@\H:\w\$(__git_ps1)\[\033[38;5;15m\]\n» \[$(tput sgr0)\]"
 
 alias g='git'
+source /usr/share/bash-completion/completions/git
+__git_complete g __git_main
