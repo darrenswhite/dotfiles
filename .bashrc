@@ -116,7 +116,10 @@ fi
 export PS1="\[\033[38;5;208m\]\u@\H:\w\$(__git_ps1)\[\033[38;5;15m\]\n» \[$(tput sgr0)\]"
 
 alias g='git'
-source /usr/share/bash-completion/completions/git
+
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . /usr/local/etc/profile.d/bash_completion.sh
+[[ -r "/usr/share/bash-completion/completions/git" ]] && . /usr/share/bash-completion/completions/git
+
 __git_complete g __git_main
 
 alias bd=". bd -si"
