@@ -42,3 +42,5 @@ PATH=$HOME/workspace/flutter/bin:$PATH
 
 # Add npm to path
 PATH=$HOME/.npm-global/bin:$PATH
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
