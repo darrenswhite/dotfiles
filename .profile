@@ -45,7 +45,10 @@ PATH=$HOME/.npm-global/bin:$PATH
 
 # Add jenv to path
 PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+
+if [ -x "$(command -v jenv)" ]; then
+    eval "$(jenv init -)"
+    export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+fi
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
