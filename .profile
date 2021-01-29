@@ -43,4 +43,9 @@ PATH=$HOME/workspace/flutter/bin:$PATH
 # Add npm to path
 PATH=$HOME/.npm-global/bin:$PATH
 
+# Add jenv to path
+PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+
 export BASH_SILENCE_DEPRECATION_WARNING=1
