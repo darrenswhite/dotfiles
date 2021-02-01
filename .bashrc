@@ -123,3 +123,5 @@ alias g='git'
 __git_complete g __git_main
 
 alias bd=". bd -si"
+
+[[ -r "/usr/local/etc/profile.d/bd" ]] && . /usr/local/etc/profile.d/bd
