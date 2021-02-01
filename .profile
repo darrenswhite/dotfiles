@@ -51,4 +51,7 @@ if [ -x "$(command -v jenv)" ]; then
     export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 fi
 
+# Add nvm
+[[ -r "$HOME/.nvm/nvm.sh" ]] && . $HOME/.nvm/nvm.sh
+
 export BASH_SILENCE_DEPRECATION_WARNING=1
