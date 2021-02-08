@@ -120,9 +120,6 @@ export PS1="\[\033[38;5;208m\]\u@\H:\w\$(__git_ps1)\[\033[38;5;15m\]\n» \[$(tpu
 alias g='git'
 alias bd=". bd -si"
 
-# enable git completition for the alias
-__git_complete g __git_main
-
 # enable brew bash completion
 if type brew &>/dev/null; then
   HOMEBREW_PREFIX="$(brew --prefix)"
@@ -134,4 +131,7 @@ if type brew &>/dev/null; then
     done
   fi
 fi
+
+# enable git completition for the alias
+__git_complete g __git_main
 
