@@ -113,18 +113,25 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# set custom prompt
 export PS1="\[\033[38;5;208m\]\u@\H:\w\$(__git_ps1)\[\033[38;5;15m\]\n» \[$(tput sgr0)\]"
 
+# set aliases
 alias g='git'
-
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . /usr/local/etc/profile.d/bash_completion.sh
-[[ -r "/usr/share/bash-completion/completions/git" ]] && . /usr/share/bash-completion/completions/git
-
-__git_complete g __git_main
-
 alias bd=". bd -si"
 
-[[ -r "/usr/local/etc/profile.d/bd" ]] && . /usr/local/etc/profile.d/bd
+# enable git completition for the alias
+__git_complete g __git_main
 
-[[ -r "/usr/local/etc/profile.d/docker" ]] && . /usr/local/etc/profile.d/docker
-[[ -r "/usr/local/etc/profile.d/docker-compose" ]] && . /usr/local/etc/profile.d/docker-compose
+# enable brew bash completion
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
+
