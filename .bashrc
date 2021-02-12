@@ -102,6 +102,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# set aliases
+alias g='git'
+alias bd=". bd -si"
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -115,10 +119,6 @@ fi
 
 # set custom prompt
 export PS1="\[\033[38;5;208m\]\u@\H:\w\$(__git_ps1)\[\033[38;5;15m\]\n» \[$(tput sgr0)\]"
-
-# set aliases
-alias g='git'
-alias bd=". bd -si"
 
 # enable brew bash completion
 if type brew &>/dev/null; then
