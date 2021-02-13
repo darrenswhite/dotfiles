@@ -136,7 +136,7 @@ if type brew &>/dev/null; then
 fi
 
 # enable git completition for the alias
-_completion_loader git
+type _completion_loader &>/dev/null && _completion_loader git
 __git_complete g __git_main
 
 # load nvm
