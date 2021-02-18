@@ -12,6 +12,7 @@
 	autoStash = true
 [alias]
 	a = add
+	ai = add -i
 	ap = add -p
 	b = branch
 	ba = branch -a
