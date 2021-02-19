@@ -33,6 +33,7 @@
 	ds = diff --stat
 	f = fetch -p
 	g = grep
+	h = update-index --assume-unchanged
 	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 	m = merge
 	p = push
@@ -40,3 +41,4 @@
 	r = rebase
 	rv = "!f() { git push ${1:-origin} HEAD:refs/for/${2-:$(git bn)} }; f"
 	s = status -bs
+    u = update-index --no-assume-unchanged
