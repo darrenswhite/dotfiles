@@ -1,6 +1,7 @@
 color ron
 set hls
 set number
+set ruler
 set showmatch
 set softtabstop=4
 set tabstop=4
