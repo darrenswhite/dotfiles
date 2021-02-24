@@ -1,0 +1,57 @@
+{
+  "title": "Chrome",
+  "rules": [
+    {
+      "description": "Ctrl+J => Cmd+Option+L (Open downloads) (Only in Chrome)",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": ["^com\\.google\\.Chrome$"],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "l",
+              "modifiers": ["left_command", "option"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Ctrl+H => Cmd+Y (Open history) (Only in Chrome)",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": ["^com\\.google\\.Chrome$"],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "y",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
