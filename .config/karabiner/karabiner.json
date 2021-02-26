@@ -1767,7 +1767,7 @@
                         ]
                     },
                     {
-                        "description": "Delete => Cmd+backspace (Delete) (Only in Finder)",
+                        "description": "Shift + Delete => Cmd+option+backspace (Permanently delete) (Only in Finder)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1781,10 +1781,38 @@
                                 "from": {
                                     "key_code": "delete_forward",
                                     "modifiers": {
-                                        "optional": [
-                                            "any"
+                                        "mandatory": [
+                                            "left_shift"
                                         ]
                                     }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Delete => Cmd+backspace (Delete) (Only in Finder)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.finder"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_forward"
                                 },
                                 "to": [
                                     {
@@ -2145,21 +2173,21 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "key_code": "non_us_backslash"
-                    },
-                    "to": [
-                        {
-                            "key_code": "grave_accent_and_tilde"
-                        }
-                    ]
-                },
-                {
-                    "from": {
                         "key_code": "grave_accent_and_tilde"
                     },
                     "to": [
                         {
                             "key_code": "non_us_backslash"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "non_us_backslash"
+                    },
+                    "to": [
+                        {
+                            "key_code": "grave_accent_and_tilde"
                         }
                     ]
                 }
