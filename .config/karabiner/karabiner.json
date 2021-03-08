@@ -1597,7 +1597,11 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+                                        "key_code": "q",
+                                        "modifiers": [
+                                            "control",
+                                            "left_command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
