@@ -148,7 +148,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 if type pyenv &>/dev/null; then
-	echo "pyenv"
 	eval "$(pyenv init -)"
 	eval "$(pyenv virtualenv-init -)"
 fi
