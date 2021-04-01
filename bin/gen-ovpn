@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # OpenVPN version 2.3.2
 # Ubuntu 14.04 LTS x64

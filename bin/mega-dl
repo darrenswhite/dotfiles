@@ -1,1 +1,0 @@
-mega-get --ignore-quota-warn -q $1 /mnt/challenger/share/mega/

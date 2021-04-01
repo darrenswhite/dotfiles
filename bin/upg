@@ -2,12 +2,19 @@
 
 set -e
 
-sudo apt update
-sudo apt install
-sudo apt upgrade
-sudo apt dist-upgrade
-sudo apt autoremove
-sudo apt autoclean
+if type apt-get &>/dev/null; then
+    sudo apt-get update
+    sudo apt-get install
+    sudo apt-get upgrade
+    sudo apt-get dist-upgrade
+    sudo apt-get autoremove
+    sudo apt-get autoclean
+fi
+
+if type brew &>/dev/null; then
+  brew update
+  brew upgrade
+fi
 
 if [[ -f /run/reboot-required ]]; then
     cat /run/reboot-required

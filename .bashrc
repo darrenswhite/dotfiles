@@ -104,7 +104,11 @@ fi
 
 # set aliases
 alias g='git'
-alias bd=". bd -si"
+alias bd='. bd -si'
+alias mg='mega-get --ignore-quota-warn -q "$1" /mnt/challenger/share/mega/'
+alias mt='mega-transfers --limit=1000 --path-display-size=1024'
+alias bt='pactl unload-module module-bluetooth-discover && pactl load-module module-bluetooth-discover'
+alias ytdla='mpv --ytdl-format=bestaudio ytdl://ytsearch:"$@"'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
