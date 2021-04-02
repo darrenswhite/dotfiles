@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -e
+
+mega-get --ignore-quota-warn -q $1 /mnt/challenger/share/mega/
