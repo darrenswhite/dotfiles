@@ -1,0 +1,82 @@
+_RESET=$(tput sgr0)
+_REV=$(tput rev)
+
+BLUE=111
+GREEN=79
+ORANGE=215
+PINK=219
+PURPLE=129
+
+function __ps_bg() {
+  tput setab "${1}"
+}
+
+function __ps_fg() {
+  tput setaf "${1}"
+}
+
+function __ps_chunk() {
+  local col=${1}
+  local chunk=${2}
+  local next=${3}
+  local output=''
+
+  output+="${_RESET}"
+  output+="$(tput setaf "${col}")${_REV}"
+  output+="${chunk}"
+  output+="${_RESET}"
+
+  if [ -n "${next}" ]; then
+    output+="$(__ps_arrow "${col}" "${next}")"
+  fi
+
+  echo "$output"
+}
+
+function __ps_arrow() {
+  local output=''
+  local fg=${1}
+  local bg=${2}
+
+  output+="${_RESET}"
+  output+="$(tput setaf "${fg}")"
+
+  if [ -n "${bg}" ]; then
+    output+="$(tput setab "${bg}")"
+  fi
+
+  output+=""
+  output+="${_RESET}"
+
+  echo "$output"
+}
+
+function __git_branch() {
+  __git_ps1 "%s"
+}
+
+function __git_branch_ps() {
+  local output=''
+  local branch
+
+  branch="$(__git_branch)"
+
+  if [ -n "${branch}" ]; then
+    output+=$(__ps_arrow ${ORANGE} ${PURPLE})
+    output+=$(__ps_chunk ${PURPLE} "  ${branch} ")
+    output+=$(__ps_arrow ${PURPLE})
+  else
+    output+=$(__ps_arrow ${ORANGE})
+  fi
+
+  echo "${output}"
+}
+
+timestamp=$(__ps_chunk ${PINK} ' \t ' ${BLUE})
+user=$(__ps_chunk ${BLUE} ' \u ' ${GREEN})
+hostname=$(__ps_chunk ${GREEN} ' \H ' ${ORANGE})
+working_dir=$(__ps_chunk ${ORANGE} ' \w ')
+branch="\$(__git_branch_ps)"
+ps2="\n${_RESET}$(__ps_fg ${PINK})└──»» ${_RESET}"
+
+export PS1="${timestamp}${user}${hostname}${working_dir}${branch}${ps2}"

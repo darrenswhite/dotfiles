@@ -103,7 +103,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # set aliases
-alias bd='. bd -si'
+alias bd='. bd -si &>/dev/null'
 alias bt='pactl unload-module module-bluetooth-discover && pactl load-module module-bluetooth-discover'
 alias g='git'
 alias mt='mega-transfers --limit=1000 --path-display-size=1024'
@@ -121,7 +121,7 @@ if ! shopt -oq posix; then
 fi
 
 # set custom prompt
-export PS1="\[\033[38;5;208m\]\u@\H:\w\$(__git_ps1)\[\033[38;5;15m\]\n» \[$(tput sgr0)\]"
+. .bash_prompt
 
 # enable brew bash completion
 if type brew &>/dev/null; then
@@ -149,8 +149,12 @@ __git_complete g __git_main
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+# load pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 if type pyenv &>/dev/null; then
 	eval "$(pyenv init -)"
 	eval "$(pyenv virtualenv-init -)"
 fi
+
+# show git dirty state in prompt
+export GIT_PS1_SHOWDIRTYSTATE=1
