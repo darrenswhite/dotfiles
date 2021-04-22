@@ -103,10 +103,11 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # set aliases
-alias g='git'
 alias bd='. bd -si'
-alias mt='mega-transfers --limit=1000 --path-display-size=1024'
 alias bt='pactl unload-module module-bluetooth-discover && pactl load-module module-bluetooth-discover'
+alias g='git'
+alias mt='mega-transfers --limit=1000 --path-display-size=1024'
+alias pls='sudo $(fc -ln -1)'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
