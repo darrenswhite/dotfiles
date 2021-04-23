@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 _RESET="\001$(tput sgr0)\002"
 _REV="\001$(tput rev)\002"
@@ -72,14 +72,39 @@ function __git_branch_ps() {
     output+="$(__ps_arrow ${ORANGE})"
   fi
 
+  echo "${output}"
+}
+
+function __ps_cols() {
+  local left=${1}
+  local right=${2}
+  local len=$((${#right}))
+  local move_cursor_rightmost='\033[500C'
+  local pad
+  local output=''
+
+  pad=$(printf "%.s " $(seq 1 ${len}))
+  output+="${left}"
+  output+="${pad}"
+  output+="${move_cursor_rightmost}"
+  output+="\033[$(( ${#pad} - 1 ))D"
+  output+="${right}"
+
   echo -e "${output}"
 }
 
-timestamp="$(__ps_chunk ${PINK} ' \t ' ${BLUE})"
-user="$(__ps_chunk ${BLUE} ' \u ' ${GREEN})"
-hostname="$(__ps_chunk ${GREEN} ' \H ' ${ORANGE})"
 working_dir="$(__ps_chunk ${ORANGE} ' \w ')"
-branch="\$(__git_branch_ps)"
+branch="$(__git_branch_ps)"
+
+user="$(__ps_chunk ${BLUE} " ${USER} " ${GREEN})"
+hostname="$(__ps_chunk ${GREEN} ' \H ' ${ORANGE})"
+timestamp="$(__ps_chunk ${PINK} ' \t ' ${BLUE})"
+
 ps2="\n${_RESET}$(__ps_fg ${PINK})└──»» ${_RESET}"
+
+left="${working_dir}${branch}"
+right="${user}${hostname}${timestamp}"
+
+psx="\$(__ps_cols '${left}' '${right}')"
 
 export PS1="${timestamp}${user}${hostname}${working_dir}${branch}${ps2}"
