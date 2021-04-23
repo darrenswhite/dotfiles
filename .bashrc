@@ -121,7 +121,7 @@ if ! shopt -oq posix; then
 fi
 
 # set custom prompt
-. .bash_prompt
+. "$HOME/.bash_prompt"
 
 # enable brew bash completion
 if type brew &>/dev/null; then
