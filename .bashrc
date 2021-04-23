@@ -163,3 +163,6 @@ fi
 
 # show git dirty state in prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
+
+# add timestamp to history
+export HISTTIMEFORMAT="%F %T "
