@@ -1,110 +1,204 @@
 #!/usr/bin/env bash
 
+unset _COLORS
+declare -A _COLORS
+
+_COLORS=(
+  [blue]=111
+  [green]=79
+  [orange]=215
+  [pink]=219
+  [purple]=129
+  [red]=1
+)
+
+unset _LEFT
+declare -a _LEFT
+
+_LEFT=(
+  'time=pink'
+  'user=blue'
+  'hostname=green'
+  'working_dir=orange'
+  'git=purple'
+)
+
+unset _RIGHT
+declare -a _RIGHT
+
+_RIGHT=(
+)
+
+_PROMPT_COLOR=orange
+_PROMPT_COLOR_ERROR=red
+
 _RESET="\001$(tput sgr0)\002"
 _REV="\001$(tput rev)\002"
 
-BLUE=111
-GREEN=79
-ORANGE=215
-PINK=219
-PURPLE=129
-
-function __ps_bg() {
-  echo "\001$(tput setab "${1}")\002"
+function __prompt_bg() {
+  echo "\001$(tput setab "${_COLORS[$1]}")\002"
 }
 
-function __ps_fg() {
-  echo "\001$(tput setaf "${1}")\002"
+function __prompt_fg() {
+  echo "\001$(tput setaf "${_COLORS[$1]}")\002"
 }
 
-function __ps_chunk() {
-  local fg=${1}
-  local chunk=${2}
-  local bg=${3}
-  local output=''
-
-  output+="${_RESET}"
-  output+="$(__ps_fg "${fg}")"
-  output+="${_REV}"
-  output+="${chunk}"
-  output+="${_RESET}"
-
-  if [ -n "${bg}" ]; then
-    output+="$(__ps_arrow "${fg}" "${bg}")"
-  fi
-
-  echo "$output"
-}
-
-function __ps_arrow() {
-  local output=''
-  local fg=${1}
+function __prompt_segment() {
+  local direction=${1}
   local bg=${2}
+  local content=${3}
 
-  output+="${_RESET}"
-  output+="$(__ps_fg "${fg}")"
-
-  if [ -n "${bg}" ]; then
-    output+="$(__ps_bg "${bg}")"
+  if [ -n "${_LAST_COLOR}" ]; then
+    if [ "${direction}" == "left" ]; then
+      __prompt_arrow "${direction}" "${_LAST_COLOR}" "${bg}"
+    elif [ "${direction}" == "right" ]; then
+      __prompt_arrow "${direction}" "${bg}" "${_LAST_COLOR}"
+    fi
   fi
 
-  output+=""
-  output+="${_RESET}"
+  _SEGMENTS+="${_RESET}"
+  _SEGMENTS+="$(__prompt_fg "${bg}")"
+  _SEGMENTS+="${_REV}"
+  _SEGMENTS+="${content}"
+  ((_SEGMENTS_LEN += ${#content}))
+  _SEGMENTS+="${_RESET}"
 
-  echo "$output"
+  _LAST_COLOR="${bg}"
 }
 
-function __git_branch() {
-  __git_ps1 "%s"
+function __prompt_arrow() {
+  local direction=${1}
+  local fg=${2}
+  local bg=${3}
+
+  _SEGMENTS+="${_RESET}"
+  _SEGMENTS+="$(__prompt_fg "${fg}")"
+
+  if [ -n "${bg}" ]; then
+    _SEGMENTS+="$(__prompt_bg "${bg}")"
+  fi
+
+  if [ "${direction}" == "left" ]; then
+    _SEGMENTS+=""
+    ((_SEGMENTS_LEN += 1))
+  elif [ "${direction}" == "right" ]; then
+    _SEGMENTS+=""
+    ((_SEGMENTS_LEN += 1))
+  fi
+
+  _SEGMENTS+="${_RESET}"
 }
 
-function __git_branch_ps() {
-  local output=''
+function __prompt_working_dir_segment() {
+  local wd
+
+  wd=$(pwd | sed "s|^${HOME}|~|")
+
+  __prompt_segment "${1}" "${2}" " ${wd} "
+}
+
+function __prompt_user_segment() {
+  __prompt_segment "${1}" "${2}" " ${USER} "
+}
+
+function __prompt_hostname_segment() {
+  __prompt_segment "${1}" "${2}" " $(hostname -s) "
+}
+
+function __prompt_time_segment() {
+  __prompt_segment "${1}" "${2}" " $(date +%H:%M:%S)"
+}
+
+function __prompt_git_segment() {
   local branch
 
-  branch="$(__git_branch)"
+  branch="$(__git_ps1 "%s")"
 
   if [ -n "${branch}" ]; then
-    output+="$(__ps_arrow ${ORANGE} ${PURPLE})"
-    output+="$(__ps_chunk ${PURPLE} "  ${branch} ")"
-    output+="$(__ps_arrow ${PURPLE})"
+    __prompt_segment "${1}" "${2}" "  ${branch} "
+  fi
+}
+
+function __prompt_exit_code() {
+  if [ ! "${_EXIT_CODE}" -eq 0 ]; then
+    __prompt_fg ${_PROMPT_COLOR_ERROR}
   else
-    output+="$(__ps_arrow ${ORANGE})"
+    __prompt_fg ${_PROMPT_COLOR}
+  fi
+}
+
+function __prompt_segments() {
+  local direction="$1"
+  local segments
+  local len
+
+  if [ "${direction}" == "left" ]; then
+    segments=("${_LEFT[@]}")
+  elif [ "${direction}" == "right" ]; then
+    segments=("${_RIGHT[@]}")
   fi
 
-  echo "${output}"
+  len=$((${#segments[*]} - 1))
+
+  for i in "${!segments[@]}"; do
+    IFS='=' read -r segment color <<<"${segments[$i]}"
+
+    if [ "${direction}" == "right" ] && [ "${i}" -eq 0 ]; then
+      __prompt_arrow "${direction}" "${color}"
+    fi
+
+    __prompt_"${segment}"_segment "${direction}" "${color}"
+
+    if [ "${direction}" == "left" ] && [ "${i}" -eq "${len}" ]; then
+      __prompt_arrow "${direction}" "${color}"
+    fi
+  done
 }
 
-function __ps_cols() {
+function __prompt_cols() {
   local left=${1}
   local right=${2}
-  local len=$((${#right}))
-  local move_cursor_rightmost='\033[500C'
-  local pad
-  local output=''
+  local len=${3}
+  local right_pad
 
-  pad=$(printf "%.s " $(seq 1 ${len}))
-  output+="${left}"
-  output+="${pad}"
-  output+="${move_cursor_rightmost}"
-  output+="\033[$(( ${#pad} - 1 ))D"
-  output+="${right}"
+  right_pad=$(printf "%.s " $(seq 1 "${len}"))
 
-  echo -e "${output}"
+  printf "%s%s%s%s%s" "${left}" "${right_pad}" "\033[500C" "\033[$((${#right_pad} - 1))D" "${right}"
 }
 
-working_dir="$(__ps_chunk ${ORANGE} ' \w ')"
-branch="$(__git_branch_ps)"
+function __prompt_ps1() {
+  PS1=""
 
-user="$(__ps_chunk ${BLUE} " ${USER} " ${GREEN})"
-hostname="$(__ps_chunk ${GREEN} ' \H ' ${ORANGE})"
-timestamp="$(__ps_chunk ${PINK} ' \t ' ${BLUE})"
+  __prompt_segments "left"
 
-ps2="\n${_RESET}$(__ps_fg ${PINK})└──»» ${_RESET}"
+  left="${_SEGMENTS}"
+  _LAST_COLOR=''
+  _SEGMENTS=''
+  _SEGMENTS_LEN=0
 
-left="${working_dir}${branch}"
-right="${user}${hostname}${timestamp}"
+  __prompt_segments "right"
 
-psx="\$(__ps_cols '${left}' '${right}')"
+  right="${_SEGMENTS}"
 
-export PS1="${timestamp}${user}${hostname}${working_dir}${branch}${ps2}"
+  PS1+="$(__prompt_cols "${left}" "${right}" $((_SEGMENTS_LEN)))"
+  PS1+="\n${_RESET}$(__prompt_exit_code)└──»» ${_RESET}"
+
+  unset _EXIT_CODE
+  unset _LAST_COLOR
+  unset _SEGMENTS
+  unset _SEGMENTS_LEN
+}
+
+function __prompt_pre() {
+  _EXIT_CODE=$?
+}
+
+function main() {
+  if [[ ! "${PROMPT_COMMAND}" =~ '__prompt_ps1' ]]; then
+    [[ ! ${#PROMPT_COMMAND} -eq 0 ]] && PROMPT_COMMAND+=";"
+
+    PROMPT_COMMAND="__prompt_pre; $PROMPT_COMMAND __prompt_ps1;"
+  fi
+}
+
+main
