@@ -106,7 +106,7 @@ function __prompt_hostname_segment() {
 }
 
 function __prompt_time_segment() {
-  __prompt_segment "${1}" "${2}" " $(date +%H:%M:%S)"
+  __prompt_segment "${1}" "${2}" " $(date +%H:%M:%S) "
 }
 
 function __prompt_git_segment() {
