@@ -5,11 +5,26 @@ function okta-aws() {
   shift || true
   local aws_command=("${@}")
 
+  if [ -z "${profile}" ]; then
+    echo "No profile set."
+    return 1
+  fi
+
+  echo "Logging into: ${profile}..."
+
   okta-awscli -o "${profile}" -p "${profile}"
 
   export AWS_PROFILE="${profile}"
 
+  echo "Logged into: ${profile}."
+
+
   if [ -n "${aws_command}" ]; then
+    if [ "${profile}" == "prod" ]; then
+      echo "Did you mean to run this on prod? Do you want to lose your job?"
+      return 2
+    fi
+
     aws "${aws_command[@]}"
   fi
 }
