@@ -166,3 +166,10 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 
 # add timestamp to history
 export HISTTIMEFORMAT="%F %T "
+
+# load bash functions
+if [ -d "${HOME}/.bash_functions" ]; then
+    for file in "${HOME}/.bash_functions"/*; do
+        . "$file"
+    done
+fi

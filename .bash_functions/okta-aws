@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+function okta-aws() {
+  local profile="${1}"
+  shift || true
+  local aws_command=("${@}")
+
+  okta-awscli -o "${profile}" -p "${profile}"
+
+  export AWS_PROFILE="${profile}"
+
+  if [ -n "${aws_command}" ]; then
+    aws "${aws_command[@]}"
+  fi
+}
