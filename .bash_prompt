@@ -150,7 +150,7 @@ function __prompt_segments() {
     __prompt_"${segment}"_segment "${direction}" "${color}"
 
     if [ "${direction}" == "left" ] && [ "${i}" -eq "${len}" ]; then
-      __prompt_arrow "${direction}" "${color}"
+      __prompt_arrow "${direction}" "${_LAST_COLOR}"
     fi
   done
 }
