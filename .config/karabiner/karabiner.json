@@ -52,7 +52,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -112,7 +112,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -172,7 +172,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -237,7 +237,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -302,7 +302,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -369,7 +369,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -434,7 +434,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -499,7 +499,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -564,7 +564,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -624,7 +624,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -689,7 +689,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$",
+                                            "^com\\.jetbrains\\.",
                                             "^com\\.microsoft\\.VSCode$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -785,7 +785,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -818,7 +818,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -857,7 +857,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -898,7 +898,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -931,7 +931,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -970,7 +970,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1011,7 +1011,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1052,7 +1052,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1093,7 +1093,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1236,7 +1236,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1377,7 +1377,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$",
+                                            "^com\\.jetbrains\\.",
                                             "^com\\.microsoft\\.VSCode$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -1438,7 +1438,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$",
+                                            "^com\\.jetbrains\\.",
                                             "^com\\.microsoft\\.VSCode$"
                                         ],
                                         "type": "frontmost_application_unless"
@@ -1502,7 +1502,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1557,7 +1557,7 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^io\\.alacritty$",
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1641,7 +1641,7 @@
                                             "^com\\.citrix\\.XenAppViewer$",
                                             "^com\\.vmware\\.proxyApp\\.",
                                             "^com\\.parallels\\.winapp\\.",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1694,7 +1694,7 @@
                                             "^com\\.citrix\\.XenAppViewer$",
                                             "^com\\.vmware\\.proxyApp\\.",
                                             "^com\\.parallels\\.winapp\\.",
-                                            "^com\\.jetbrains\\.intellij$"
+                                            "^com\\.jetbrains\\."
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
