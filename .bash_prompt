@@ -29,7 +29,7 @@ declare -a _RIGHT
 _RIGHT=(
 )
 
-_PROMPT_COLOR=orange
+_PROMPT_COLOR=pink
 _PROMPT_COLOR_ERROR=red
 
 _RESET="\001$(tput sgr0)\002"
