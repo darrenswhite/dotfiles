@@ -141,6 +141,9 @@ if type brew &>/dev/null; then
 
   # load autojump
   [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+  # load brew coreutils
+  export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
 # enable git completition for the alias
