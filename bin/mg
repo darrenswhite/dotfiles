@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 mega-get --ignore-quota-warn -q $1 /mnt/challenger/share/mega/
