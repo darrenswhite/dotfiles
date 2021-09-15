@@ -31,7 +31,7 @@
 	d = diff
 	dc = diff --cached
 	ds = diff --stat
-	f = fetch -p
+	f = fetch -pP
 	g = grep
 	h = update-index --assume-unchanged
 	i = !git ls-files -v | grep "^[[:lower:]]"
