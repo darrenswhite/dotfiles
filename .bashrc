@@ -113,6 +113,7 @@ alias bt='pactl unload-module module-bluetooth-discover && pactl load-module mod
 alias g='git'
 alias mt='mega-transfers --limit=1000 --path-display-size=1024'
 alias pls='sudo $(fc -ln -1)'
+alias rs="rename 's/^.*[sS](\d{1,2})[eE](\d{1,2}).*\.(\w+)$/S\$1E\$2.\$3/'"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
