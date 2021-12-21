@@ -165,6 +165,9 @@ if type pyenv &>/dev/null; then
 	eval "$(pyenv virtualenv-init -)"
 fi
 
+# load flutter
+export PATH="$HOME/workspace/flutter/bin:$PATH"
+
 # purge autojump entries
 if type j &>/dev/null; then
     j --purge &>/dev/null
