@@ -10,6 +10,8 @@
 	rebase = true
 [rebase]
 	autoStash = true
+[init]
+    defaultBranch = main
 [alias]
 	a = add
 	ai = add -i
