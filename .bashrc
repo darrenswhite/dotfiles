@@ -173,11 +173,6 @@ if type j &>/dev/null; then
     j --purge &>/dev/null
 fi
 
-# enable volta completions
-if type volta &>/dev/null; then
-	source <(volta completions bash)
-fi
-
 # show git dirty state in prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 
@@ -189,4 +184,13 @@ if [ -d "${HOME}/.bash_functions" ]; then
     for file in "${HOME}/.bash_functions"/*; do
         . "$file"
     done
+fi
+
+# load volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# enable volta completions
+if type volta &>/dev/null; then
+	source <(volta completions bash)
 fi
