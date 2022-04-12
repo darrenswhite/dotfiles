@@ -173,6 +173,11 @@ if type j &>/dev/null; then
     j --purge &>/dev/null
 fi
 
+# enable volta completions
+if type volta &>/dev/null; then
+	source <(volta completions bash)
+fi
+
 # show git dirty state in prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
 
