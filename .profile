@@ -48,7 +48,6 @@ PATH="$HOME/.jenv/bin:$PATH"
 
 if [ -x "$(command -v jenv)" ]; then
     eval "$(jenv init -)"
-    export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 fi
 
 # Add nvm
