@@ -44,4 +44,4 @@
 	r = rebase
 	rv = "!f() { git push ${1:-origin} HEAD:refs/for/${2:-$(git bn)}; }; f"
 	s = status -bs
-    u = "!f() { git fetch -pP; git merge --ff-only origin/$(git bn); }; f"
+    u = "!f() { git fetch -pP; git rebase origin/$(git bn); }; f"
