@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+INPUT="${1}"
+FILENAME="${INPUT%.*}"
+EXTENSION="${INPUT##*.}"
+OUTPUT="${FILENAME}.srt.${EXTENSION}"
+
+ffmpeg -i "${INPUT}" -map 0 -c:v copy -c:a copy -c:s srt "${OUTPUT}"
