@@ -45,3 +45,4 @@
 	rv = "!f() { git push ${1:-origin} HEAD:refs/for/${2:-$(git bn)}; }; f"
 	s = status -bs
     u = "!f() { git fetch -pP; git rebase origin/$(git bn); }; f"
+	z = cz commit
