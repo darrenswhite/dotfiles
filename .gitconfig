@@ -46,3 +46,4 @@
 	s = status -bs
     u = "!f() { git fetch -pP; git rebase origin/$(git bn); }; f"
 	z = cz commit
+	za = "!f() { git add -u; git cz commit; }; f"
