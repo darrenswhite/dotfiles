@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+JAR_FILE="$(find ${SCRIPT_DIR} -name ModpackDownloader-*.jar)"
+
+[ -d modpack/overrides/mods ] && mv modpack/overrides/mods .
+
+java -jar "${JAR_FILE}" modpack .
+
+mv mods modpack/overrides
+[ -f modlist.html ] && mv modlist.html modpack
+rm MODPACK_INFO.md
