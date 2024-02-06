@@ -26,6 +26,33 @@
           "type": "basic"
         }
       ]
+    },
+    {
+      "description": "Microphone Button => Shift + Cmd + M (Only in Teams)",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.teams$"],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": ["left_command"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "m",
+              "modifiers": ["left_shift", "left_gui"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
     }
+
   ]
 }
