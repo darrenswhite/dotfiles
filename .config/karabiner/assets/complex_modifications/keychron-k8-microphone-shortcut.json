@@ -33,7 +33,7 @@
         {
           "conditions": [
             {
-              "bundle_identifiers": ["^com\\.microsoft\\.teams$"],
+              "bundle_identifiers": ["^com\\.microsoft\\.teams2?$"],
               "type": "frontmost_application_if"
             }
           ],
