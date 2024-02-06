@@ -72,6 +72,9 @@ xterm*|rxvt*)
     ;;
 esac
 
+# enable homebrew
+[ -s /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # enable color support of ls and also add handy aliases
 if type dircolors &>/dev/null || type gdircolors &>/dev/null; then
     if type dircolors &>/dev/null; then
@@ -201,4 +204,14 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 if type volta &>/dev/null; then
 	source <(volta completions bash)
 fi
+
+# enable iterm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# Added by Toolbox App
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
