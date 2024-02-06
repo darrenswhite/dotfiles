@@ -73,11 +73,11 @@ xterm*|rxvt*)
 esac
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ] || [ -x /usr/local/bin/gdircolors ]; then
-    if [ -x /usr/bin/dircolors ]; then
+if type dircolors &>/dev/null || type gdircolors &>/dev/null; then
+    if type dircolors &>/dev/null; then
         test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     fi
-    if [ -x /usr/local/bin/gdircolors ]; then
+    if type gdircolors &>/dev/null; then
         test -r ~/.dircolors && eval "$(gdircolors -b ~/.dircolors)" || eval "$(gdircolors -b)"
     fi
     alias ls='ls --color=auto'
