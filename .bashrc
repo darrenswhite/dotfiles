@@ -162,6 +162,9 @@ export PATH="$HOME/bin:$PATH"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+# load nvm bash completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 # load pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 if type pyenv &>/dev/null; then
@@ -198,3 +201,4 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 if type volta &>/dev/null; then
 	source <(volta completions bash)
 fi
+
