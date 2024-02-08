@@ -157,6 +157,8 @@ __git_complete g __git_main
 # load autojump
 [[ -s /usr/share/autojump/autojump.sh ]] && . /usr/share/autojump/autojump.sh
 
+# load zoxide
+type zoxide &>/dev/null && eval "$(zoxide init bash)"
 
 # load bin
 export PATH="$HOME/bin:$PATH"
@@ -210,6 +212,9 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 # Added by Toolbox App
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+
+# install fzf key bindings and fuzzy completion
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
