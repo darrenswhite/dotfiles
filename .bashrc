@@ -143,9 +143,6 @@ if type brew &>/dev/null; then
     done
   fi
 
-  # load autojump
-  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
   # load brew coreutils
   export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
 fi
@@ -153,9 +150,6 @@ fi
 # enable git completition for the alias
 type _completion_loader &>/dev/null && _completion_loader git
 __git_complete g __git_main
-
-# load autojump
-[[ -s /usr/share/autojump/autojump.sh ]] && . /usr/share/autojump/autojump.sh
 
 # load zoxide
 type zoxide &>/dev/null && eval "$(zoxide init bash)"
@@ -179,11 +173,6 @@ fi
 
 # load flutter
 export PATH="$HOME/workspace/flutter/bin:$PATH"
-
-# purge autojump entries
-if type j &>/dev/null; then
-    j --purge &>/dev/null
-fi
 
 # show git dirty state in prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
