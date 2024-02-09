@@ -204,6 +204,8 @@ export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 # install fzf key bindings and fuzzy completion
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# install fzf key bindings for Git objects
+[ -f ~/.fzf.bash ] && [ -f ~/.fzf.git.sh ] && source ~/.fzf.git.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
