@@ -207,10 +207,6 @@ export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 # install fzf key bindings for Git objects
 [ -f ~/.fzf.bash ] && [ -f ~/.fzf.git.sh ] && source ~/.fzf.git.sh
 
-# load deno
-export DENO_INSTALL="/home/darren/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh" || true
