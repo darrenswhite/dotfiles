@@ -5,6 +5,8 @@ set ruler
 set showmatch
 set softtabstop=4
 set tabstop=4
+set shiftwidth=4
+set expandtab
 set term=xterm-256color
 syntax on
 
