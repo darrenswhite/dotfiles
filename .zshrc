@@ -123,11 +123,12 @@ if type brew &>/dev/null; then
   export PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
-# load zoxide
-type zoxide &>/dev/null && eval "$(zoxide init bash)"
-
 # load bin
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# load zoxide
+type zoxide &>/dev/null && eval "$(zoxide init bash)"
 
 # load nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
