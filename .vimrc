@@ -1,5 +1,6 @@
 set hls
 set number
+set relativenumber
 set ruler
 set showmatch
 set softtabstop=4
