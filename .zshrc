@@ -114,6 +114,7 @@ alias bd='. bd -si &>/dev/null'
 alias g='git'
 alias mt='mega-transfers --limit=1000 --path-display-size=1024'
 alias rs="rename 's/^.*[sS](\d{1,2})[eE](\d{1,2}).*\.(\w+)$/S\$1E\$2.\$3/'"
+alias ts='tmux new-session -A -s $(tmux ls | fzf | cut -f1 -d":")'
 
 # enable brew completion
 if type brew &>/dev/null; then
