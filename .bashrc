@@ -151,11 +151,12 @@ fi
 type _completion_loader &>/dev/null && _completion_loader git
 __git_complete g __git_main
 
-# load zoxide
-type zoxide &>/dev/null && eval "$(zoxide init bash)"
-
 # load bin
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# load zoxide
+type zoxide &>/dev/null && eval "$(zoxide init bash)"
 
 # load nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
