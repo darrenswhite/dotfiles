@@ -1,6 +1,7 @@
 [core]
 	editor = vi
 	autocrlf = input
+	pager = bat --style=plain
 [push]
 	default = simple
 [pull]
