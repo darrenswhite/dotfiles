@@ -1,3 +1,11 @@
+# enable homebrew
+[ -s /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# autostart tmux session
+if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
+    $HOME/bin/tmux-sessionizer $HOME
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -7,9 +15,6 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOQUIT=false
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -80,7 +85,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf tmux)
+plugins=(git fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,11 +115,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 [ -e $HOME/.zsh_profile ] && source $HOME/.zsh_profile
-
-# enable homebrew
-[ -s /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 alias bd='. bd -si &>/dev/null'
 alias g='git'
