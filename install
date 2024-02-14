@@ -4,11 +4,9 @@ set -euo pipefail
 
 git pull origin main
 
-pushd $DOTFILES
-
 for dir in $(echo $STOW_DIRS | sed "s/,/ /g"); do
     echo "stow $dir"
-    stow -D $dir
-    stow $dir
+    stow -D $dir -t $HOME
+    stow $dir -t $HOME
 done
 
