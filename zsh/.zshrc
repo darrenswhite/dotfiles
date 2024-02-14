@@ -156,7 +156,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export WORKSPACE="$HOME/workspace"
 export DOTFILES="$WORKSPACE/dotfiles"
-export STOW_DIRS="bin,git,vim,zsh"
+export STOW_DIRS="bin,git,karabiner,tmux,vim,zsh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
