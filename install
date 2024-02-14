@@ -2,10 +2,8 @@
 
 set -euo pipefail
 
-git pull origin main
-
-for dir in $(echo $STOW_DIRS | sed "s/,/ /g"); do
+for dir in ${STOW_DIRS//,/ }; do
     echo "stow $dir"
-    stow $dir -t $HOME --adopt
+    stow "$dir" -t "$HOME" --adopt
 done
 
