@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+selected=$(tmux list-sessions -F "#{session_name}" | sort -ru | fzf)
+
+if [[ $sessions = *"$selected"* ]]; then
+    tmux switch-client -t "$selected"
+fi
