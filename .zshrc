@@ -118,6 +118,7 @@ source $ZSH/oh-my-zsh.sh
 [ -e $HOME/.zsh_profile ] && source $HOME/.zsh_profile
 
 alias bd='. bd -si &>/dev/null'
+alias cat='bat --style=plain'
 alias g='git'
 alias mt='mega-transfers --limit=1000 --path-display-size=1024'
 alias rs="rename 's/^.*[sS](\d{1,2})[eE](\d{1,2}).*\.(\w+)$/S\$1E\$2.\$3/'"
