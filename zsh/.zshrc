@@ -2,7 +2,7 @@
 [ -s /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # autostart tmux session
-if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
+if [ -n "$PS1" ] && [ -z "$TMUX" ] && [ -e $HOME/.local/bin/tmux-sessionizer ]; then
     $HOME/.local/bin/tmux-sessionizer $HOME
 fi
 
