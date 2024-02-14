@@ -3,7 +3,7 @@
 
 # autostart tmux session
 if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
-    $HOME/bin/tmux-sessionizer $HOME
+    $HOME/.local/bin/tmux-sessionizer $HOME
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -117,6 +117,10 @@ source $ZSH/oh-my-zsh.sh
 
 [ -e $HOME/.zsh_profile ] && source $HOME/.zsh_profile
 
+export WORKSPACE="$HOME/workspace"
+export DOTFILES="$WORKSPACE/dotfiles"
+export STOW_DIRS="bin,git,karabiner,tmux,vim,zsh"
+
 alias bd='. bd -si &>/dev/null'
 alias cat='bat --style=plain'
 alias g='git'
@@ -124,7 +128,6 @@ alias mt='mega-transfers --limit=1000 --path-display-size=1024'
 alias rs="rename 's/^.*[sS](\d{1,2})[eE](\d{1,2}).*\.(\w+)$/S\$1E\$2.\$3/'"
 
 # load bin
-export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # load zoxide
@@ -137,7 +140,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # load flutter
-export PATH="$HOME/workspace/flutter/bin:$PATH"
+export PATH="$WORKSPACE/flutter/bin:$PATH"
 
 # show git dirty state in prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -153,10 +156,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export WORKSPACE="$HOME/workspace"
-export DOTFILES="$WORKSPACE/dotfiles"
-export STOW_DIRS="bin,git,karabiner,tmux,vim,zsh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
