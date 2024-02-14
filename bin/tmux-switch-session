@@ -4,6 +4,6 @@ set -euo pipefail
 
 selected=$(tmux list-sessions -F "#{session_name}" | sort -ru | fzf)
 
-if tmux has-session -t=$selected 2> /dev/null; then
-    tmux switch-client -t $selected
+if tmux has-session -t="$selected" 2> /dev/null; then
+    tmux switch-client -t "$selected"
 fi
