@@ -6,7 +6,6 @@ git pull origin main
 
 for dir in $(echo $STOW_DIRS | sed "s/,/ /g"); do
     echo "stow $dir"
-    stow -D $dir -t $HOME
-    stow $dir -t $HOME
+    stow $dir -t $HOME --adopt
 done
 
