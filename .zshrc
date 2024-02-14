@@ -136,13 +136,6 @@ export NVM_DIR="$HOME/.nvm"
 # load nvm bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# load pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-if type pyenv &>/dev/null; then
-	eval "$(pyenv init -)"
-	eval "$(pyenv virtualenv-init -)"
-fi
-
 # load flutter
 export PATH="$HOME/workspace/flutter/bin:$PATH"
 
@@ -151,15 +144,6 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 
 # add timestamp to history
 export HISTTIMEFORMAT="%F %T "
-
-# load volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
-# enable volta completions
-if type volta &>/dev/null; then
-	source <(volta completions zsh)
-fi
 
 # Added by Toolbox App
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
