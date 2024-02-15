@@ -119,7 +119,7 @@ source $ZSH/oh-my-zsh.sh
 
 export WORKSPACE="$HOME/workspace"
 export DOTFILES="$WORKSPACE/dotfiles"
-export STOW_DIRS="bin,git,karabiner,tmux,vim,zsh"
+export STOW_DIRS="bin,git,karabiner,neovim,tmux,vim,zsh"
 export EDITOR=nvim
 
 alias bd='. bd -si &>/dev/null'
