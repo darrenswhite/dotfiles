@@ -9,7 +9,7 @@ source ~/.vimrc
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
+set scrolloff=10
 
 " Do incremental searching.
 set incsearch
@@ -34,3 +34,15 @@ Plug 'tpope/vim-commentary'
 
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
+
+set which-key
+set timeoutlen=5000
+
+set nerdtree
+
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gu <Action>(ShowUsages)
+map <leader><leader> <Action>(RecentFiles)
+map <leader>x :NERDTreeToggle<CR>
