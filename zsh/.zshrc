@@ -120,12 +120,16 @@ source $ZSH/oh-my-zsh.sh
 export WORKSPACE="$HOME/workspace"
 export DOTFILES="$WORKSPACE/dotfiles"
 export STOW_DIRS="bin,git,karabiner,tmux,vim,zsh"
+export EDITOR=nvim
 
 alias bd='. bd -si &>/dev/null'
+alias c='clear'
 alias cat='bat --style=plain'
+alias e='$EDITOR'
 alias g='git'
 alias mt='mega-transfers --limit=1000 --path-display-size=1024'
 alias rs="rename 's/^.*[sS](\d{1,2})[eE](\d{1,2}).*\.(\w+)$/S\$1E\$2.\$3/'"
+alias se='sudo $EDITOR'
 
 # load bin
 export PATH="$HOME/.local/bin:$PATH"
