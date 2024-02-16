@@ -35,6 +35,10 @@ Plug 'tpope/vim-commentary'
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
 
+let mapleader = " "
+
+set clipboard+=unnamed
+
 set which-key
 set timeoutlen=5000
 
