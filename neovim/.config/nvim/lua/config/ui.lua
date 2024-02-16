@@ -1,6 +1,9 @@
 -- show matching brackets/parenthesis
 vim.opt.showmatch = true
 
+-- disable startup message
+vim.opt.shortmess:append("sI")
+
 -- syntax highlighting
 vim.opt.termguicolors = true
 
