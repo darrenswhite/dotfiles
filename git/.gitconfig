@@ -1,5 +1,5 @@
 [core]
-	editor = vi
+	editor = $EDITOR
 	autocrlf = input
 	pager = bat --style=plain
 [push]

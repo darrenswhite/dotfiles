@@ -4,6 +4,8 @@ set -euo pipefail
 
 for dir in ${STOW_DIRS//,/ }; do
     echo "stow $dir"
+    stow -D "$dir" -t "$HOME" \
+        2> >(grep -v 'BUG in find_stowed_path? Absolute/relative mismatch' 1>&2)
     stow "$dir" -t "$HOME" --adopt
 done
 

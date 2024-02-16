@@ -13,11 +13,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- use a protected call so we don't error out on first use
---local status_ok, lazy = pcall(require, "lazy")
---if not status_ok then
---	print("lazy just installed, please restart neovim")
---	return
---end
+local status_ok, lazy = pcall(require, "lazy")
+if not status_ok then
+	print("lazy just installed, please restart neovim")
+	return
+end
 
 -- install plugins
-require("lazy").setup("plugins")
+lazy.setup("plugins")
