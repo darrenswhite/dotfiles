@@ -1,6 +1,10 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
+-- disable language provider support
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- hide buffers, not close them
 vim.opt.hidden = true
 
