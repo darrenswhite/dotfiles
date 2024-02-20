@@ -155,6 +155,9 @@ export HISTTIMEFORMAT="%F %T "
 # Added by Toolbox App
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
+# Use bat as a colorizing pager for man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # iterm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
