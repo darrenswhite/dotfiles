@@ -33,6 +33,9 @@ map <leader>fg <action>(FindInPath)
 "" find old files
 map <leader><leader> <Action>(RecentFiles)
 
+"" close current tab
+map <leader>q <Action>(CloseEditor)
+
 "" idea specific shortcuts
 nmap <leader>gd <Action>(GotoDeclaration)
 nmap <leader>gy <Action>(GotoTypeDeclaration)
