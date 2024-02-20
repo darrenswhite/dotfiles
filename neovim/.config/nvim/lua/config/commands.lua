@@ -1,4 +1,5 @@
 vim.keymap.set('n', '<esc><esc>', ':nohlsearch<cr>', { silent = true })
+vim.keymap.set('n', '<leader>q', ':bd<cr>')
 vim.keymap.set('n', '<leader>r', function()
     local file = vim.fn.expand('%') -- Get the current file name
     local first_line = vim.fn.getline(1) -- Get the first line of the file
