@@ -1,52 +1,40 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
-"   the same commands as the original .vimrc configuration.
-" You can find a list of commands here: https://jb.gg/h38q75
-" Find more examples here: https://jb.gg/share-ideavimrc
+"" === GENERAL ===
 
-" Source your .vimrc
-source ~/.vimrc
-
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
-set scrolloff=10
-
-" Do incremental searching.
-set incsearch
-
-" Don't use Ex mode, use Q for formatting.
-map Q gq
-
-" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
-
-" Highlight copied text
-Plug 'machakann/vim-highlightedyank'
-" Commentary plugin
-Plug 'tpope/vim-commentary'
-
-
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
-
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
-
+"" set leader key to space
 let mapleader = " "
 
+"" scroll bounds
+set scrolloff=10
+
+"" searching
+set hlsearch
+set incsearch
+
+"" show line numbers
+set number
+
+"" show relative line numbers
+set relativenumber
+
+"" Use system clipboard
 set clipboard+=unnamed
 
-set which-key
-set timeoutlen=5000
+"" === COMMANDS ===
 
-set nerdtree
+"" hide search results
+nmap <esc><esc> :nohlsearch<cr>
 
+"" find file
+map <leader>ff <action>(GotoFile)
+
+"" find grep
+map <leader>fg <action>(FindInPath)
+
+"" find old files
+map <leader><leader> <Action>(RecentFiles)
+
+"" idea specific shortcuts
 nmap <leader>gd <Action>(GotoDeclaration)
 nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>gu <Action>(ShowUsages)
-map <leader><leader> <Action>(RecentFiles)
-map <leader>x :NERDTreeToggle<CR>
