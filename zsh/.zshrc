@@ -119,8 +119,8 @@ source $ZSH/oh-my-zsh.sh
 
 export WORKSPACE="$HOME/workspace"
 export DOTFILES="$WORKSPACE/dotfiles"
-export STOW_DIRS="bin,git,karabiner,neovim,tmux,vim,zsh"
-export EDITOR=nvim
+export STOW_DIRS="bin,git,karabiner,lunarvim,neovim,tmux,vim,zsh"
+export EDITOR=lvim
 
 alias bd='. bd -si &>/dev/null'
 alias c='clear'
