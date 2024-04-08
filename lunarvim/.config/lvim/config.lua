@@ -2,7 +2,9 @@
 lvim.leader = "space"
 
 -- set color schema
-lvim.colorscheme = "default"
+vim.colorscheme = "rose-pine"
+vim.g.rose_pine_variant = 'moon'
+-- lvim.colorscheme = "default"
 
 -- set timeout length for key mappings
 vim.opt.timeoutlen = 500
@@ -33,7 +35,8 @@ lvim.builtin.alpha.active = false
 
 -- install custom plugins
 lvim.plugins = {
-    "mfussenegger/nvim-jdtls", -- better java LSP
+    { "mfussenegger/nvim-jdtls" }, -- better java LSP
+    { "rose-pine/neovim" }, -- color scheme
 }
 
 -- disable LSPs
