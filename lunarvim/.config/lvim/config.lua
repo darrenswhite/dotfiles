@@ -34,7 +34,7 @@ lvim.builtin.alpha.active = false
 -- install custom plugins
 lvim.plugins = {
     { "mfussenegger/nvim-jdtls" }, -- better java LSP
-    { "rose-pine/neovim" },    -- color scheme
+    { "rose-pine/neovim" },        -- color scheme
 }
 
 -- disable LSPs
@@ -82,3 +82,18 @@ lvim.keys.normal_mode["<leader>r"] = function()
         vim.cmd('echo "Not a script. Shebang line not found."')
     end
 end
+
+-- setup custom formatters
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+    {
+        command = "prettier",
+        filetypes = { "typescript", "typescriptreact" },
+    },
+}
+
+-- setup custom linters
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+    { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
+}
