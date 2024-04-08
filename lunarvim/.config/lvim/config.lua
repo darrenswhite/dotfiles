@@ -1,6 +1,9 @@
 -- set leader key to space
 lvim.leader = "space"
 
+-- set color schema
+lvim.colorscheme = "default"
+
 -- set timeout length for key mappings
 vim.opt.timeoutlen = 500
 
@@ -48,6 +51,9 @@ lvim.builtin.treesitter.ensure_installed = {
     "typescript",
     "yaml",
 }
+
+-- ignore parsers
+lvim.builtin.treesitter.ignore_install = { "diff", "gitcommit" }
 
 -- allow navigating up/down in wrapped lines
 lvim.keys.normal_mode["j"] = "gj"
