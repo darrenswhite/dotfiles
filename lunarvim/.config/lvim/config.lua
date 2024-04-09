@@ -63,9 +63,6 @@ lvim.keys.normal_mode["k"] = "gk"
 -- clear current search
 lvim.keys.normal_mode["<Esc><Esc>"] = ":nohlsearch<CR>"
 
--- close current buffer
-lvim.keys.normal_mode["<leader>q"] = ":bd<CR>"
-
 -- Run current file
 lvim.keys.normal_mode["<leader>r"] = { function()
   local file = vim.fn.expand('%')          -- Get the current file name
