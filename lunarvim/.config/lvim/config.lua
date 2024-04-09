@@ -11,13 +11,13 @@ vim.opt.timeoutlen = 500
 vim.opt.relativenumber = true
 
 -- number of spaces inserted for each indentation
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 
 -- number of spaces for a tab
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 
 -- let backspace delete indent
-vim.opt.softtabstop = 4
+vim.opt.softtabstop = 2
 
 -- show matching brackets/paranthesis
 vim.opt.showmatch = true
@@ -88,7 +88,11 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
     {
         command = "prettier",
-        filetypes = { "typescript", "typescriptreact" },
+        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    },
+    {
+        command = "jq",
+        filetypes = { "json" },
     },
 }
 
