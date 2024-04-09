@@ -33,8 +33,8 @@ lvim.builtin.alpha.active = false
 
 -- install custom plugins
 lvim.plugins = {
-    { "mfussenegger/nvim-jdtls" }, -- better java LSP
-    { "rose-pine/neovim" },        -- color scheme
+  { "mfussenegger/nvim-jdtls" }, -- better java LSP
+  { "rose-pine/neovim" },        -- color scheme
 }
 
 -- disable LSPs
@@ -42,15 +42,15 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })
 
 -- install parsers
 lvim.builtin.treesitter.ensure_installed = {
-    "bash",
-    "css",
-    "java",
-    "javascript",
-    "json",
-    "lua",
-    "python",
-    "typescript",
-    "yaml",
+  "bash",
+  "css",
+  "java",
+  "javascript",
+  "json",
+  "lua",
+  "python",
+  "typescript",
+  "yaml",
 }
 
 -- ignore parsers
@@ -67,37 +67,37 @@ lvim.keys.normal_mode["<Esc><Esc>"] = ":nohlsearch<CR>"
 lvim.keys.normal_mode["<leader>q"] = ":bd<CR>"
 
 -- Run current file
-lvim.keys.normal_mode["<leader>r"] = function()
-    local file = vim.fn.expand('%')          -- Get the current file name
-    local first_line = vim.fn.getline(1)     -- Get the first line of the file
-    if string.match(first_line, '^#!/') then -- If first line contains shebang
-        local escaped_file = vim.fn.getcwd() ..
-            '/' ..
-            vim.fn.shellescape(file)           -- Properly escape the file name for shell commands
-        vim.cmd('!chmod u+x ' .. escaped_file) -- Make the file executable
-        vim.cmd('vsplit')                      -- Split the window vertically
-        vim.cmd('terminal ' .. escaped_file)   -- Open terminal and execute the file
-        vim.cmd('startinsert')                 -- Enter insert mode, recommended by echasnovski on Reddit
-    else
-        vim.cmd('echo "Not a script. Shebang line not found."')
-    end
-end
+lvim.keys.normal_mode["<leader>r"] = { function()
+  local file = vim.fn.expand('%')          -- Get the current file name
+  local first_line = vim.fn.getline(1)     -- Get the first line of the file
+  if string.match(first_line, '^#!/') then -- If first line contains shebang
+    local escaped_file = vim.fn.getcwd() ..
+        '/' ..
+        vim.fn.shellescape(file)           -- Properly escape the file name for shell commands
+    vim.cmd('!chmod u+x ' .. escaped_file) -- Make the file executable
+    vim.cmd('vsplit')                      -- Split the window vertically
+    vim.cmd('terminal ' .. escaped_file)   -- Open terminal and execute the file
+    vim.cmd('startinsert')                 -- Enter insert mode, recommended by echasnovski on Reddit
+  else
+    vim.cmd('echo "Not a script. Shebang line not found."')
+  end
+end, { desc = "Run" } }
 
 -- setup custom formatters
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-    {
-        command = "prettier",
-        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-    },
-    {
-        command = "jq",
-        filetypes = { "json" },
-    },
+  {
+    command = "prettier",
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  },
+  {
+    command = "jq",
+    filetypes = { "json" },
+  },
 }
 
 -- setup custom linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-    { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
+  { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
 }
