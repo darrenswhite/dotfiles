@@ -98,3 +98,13 @@ local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
 }
+
+-- disable arrow keys
+lvim.keys.normal_mode["<Up>"] = "<nop>"
+lvim.keys.normal_mode["<Down>"] = "<nop>"
+lvim.keys.normal_mode["<Left>"] = "<nop>"
+lvim.keys.normal_mode["<Right>"] = "<nop>"
+lvim.keys.insert_mode["<Up>"] = "<nop>"
+lvim.keys.insert_mode["<Down>"] = "<nop>"
+lvim.keys.insert_mode["<Left>"] = "<nop>"
+lvim.keys.insert_mode["<Right>"] = "<nop>"
