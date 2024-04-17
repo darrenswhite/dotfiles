@@ -28,6 +28,9 @@ vim.opt.wrap = true
 -- disable introductory messages
 vim.opt.shortmess = vim.opt.shortmess + "I"
 
+-- disable git icons in nvim tree
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+
 -- disable plugins
 lvim.builtin.alpha.active = false
 
@@ -50,6 +53,8 @@ lvim.builtin.treesitter.ensure_installed = {
   "lua",
   "python",
   "typescript",
+  "tsx",
+  "css",
   "yaml",
 }
 
