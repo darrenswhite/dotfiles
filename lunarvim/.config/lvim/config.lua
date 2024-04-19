@@ -113,3 +113,11 @@ lvim.keys.insert_mode["<Up>"] = "<nop>"
 lvim.keys.insert_mode["<Down>"] = "<nop>"
 lvim.keys.insert_mode["<Left>"] = "<nop>"
 lvim.keys.insert_mode["<Right>"] = "<nop>"
+
+-- restore cursor shape on exit
+vim.api.nvim_exec([[
+  augroup RestoreCursorShapeOnExit
+    autocmd!
+    autocmd VimLeave * set guicursor=a:hor20-blinkwait0-blinkon10-blinkoff10
+  augroup END
+]], false)
