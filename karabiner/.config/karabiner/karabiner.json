@@ -24,6 +24,7 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
+                                            "^com.google.Chrome.app.",
                                             "^org\\.mozilla\\.firefox$",
                                             "^org\\.mozilla\\.nightly$",
                                             "^com\\.microsoft\\.Edge",
