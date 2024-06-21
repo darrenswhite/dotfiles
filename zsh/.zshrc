@@ -134,6 +134,9 @@ alias se='sudo $EDITOR'
 # load bin
 export PATH="$HOME/.local/bin:$PATH"
 
+# load snap
+export PATH="$PATH:/snap/bin"
+
 # load zoxide
 type zoxide &>/dev/null && eval "$(zoxide init zsh)"
 
