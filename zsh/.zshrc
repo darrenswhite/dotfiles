@@ -127,7 +127,6 @@ alias c='clear'
 alias cat='bat --style=plain'
 alias e='$EDITOR'
 alias g='git'
-alias mt='mega-transfers --limit=1000 --path-display-size=1024 | cat'
 alias rs="rename 's/^.*[sS](\d{1,2})[eE](\d{1,2}).*\.(\w+)$/S\$1E\$2.\$3/'"
 alias se='sudo $EDITOR'
 
