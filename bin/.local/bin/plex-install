@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-curl -o plexmediaserver.deb `curl -s 'https://plex.tv/pms/downloads/5.json' \
-    | python3 -c "import sys, json; print(json.load(sys.stdin)['computer']['Linux']['releases'][3]['url'])"`
-
-sudo dpkg -i plexmediaserver.deb
-
-rm -f plexmediaserver.deb
