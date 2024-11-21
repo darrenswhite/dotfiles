@@ -16,10 +16,6 @@ if type brew &>/dev/null; then
   brew upgrade
 fi
 
-if type pihole &>/dev/null; then
-  pihole -up
-fi
-
 if [[ -f /run/reboot-required ]]; then
     cat /run/reboot-required
 fi
