@@ -35,13 +35,13 @@
                         ]
                     },
                     {
-                        "description": "Microphone Button => Shift + Cmd + M (Only in Teams)",
+                        "description": "Microphone Button => Cmd + Shift + Space (Only in Slack)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.microsoft\\.teams2?$"
+                                            "^com\\.tinyspeck\\.slackmacgap$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -52,7 +52,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "m",
+                                        "key_code": "spacebar",
                                         "modifiers": ["left_shift", "left_gui"]
                                     }
                                 ],
