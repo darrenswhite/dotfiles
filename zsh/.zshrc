@@ -195,8 +195,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # load pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+type pyenv &>/dev/null && eval "$(pyenv init -)"
+type pyenv &>/dev/null && eval "$(pyenv virtualenv-init -)"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
